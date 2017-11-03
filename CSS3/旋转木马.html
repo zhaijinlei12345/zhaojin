@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background: black;
+        perspective: 1000px;
+        perspective-origin: 50% 500px;
+    }
+       #all{
+          width: 125px;
+           height: 125px;
+           margin: 200px auto;
+           position: relative;
+       }
+        #all img{
+            width: 125px;
+            height: 125px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="all"></div>
+<script>
+var oa=document.getElementById("all");
+var counter=0;
+    for(var i=0;i<9;i++){
+        var oimg=new Image();
+        oimg.onload=function(){
+         counter++;
+            if(counter==9){
+              var aimg=oa.getElementsByTagName("img")
+                for(var i=0;i<aimg.length;i++){
+                    aimg[i].style.transitionDelay=i*100+"ms"
+                    aimg[i].style.transform="rotateY("+(i+1)*40+"deg) translateZ(180px)"
+                }
+            }
+        };
+        oimg.src="images/"+(i+1)+".jpg";
+        oa.appendChild(oimg);
+    }
+</script>
+</body>
+</html>
