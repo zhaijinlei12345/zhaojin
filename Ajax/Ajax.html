@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="st">获取</button>
+</body>
+<script>
+  var oBot = document.getElementById('st');
+    oBot.onclick =function () {
+        var xmlHttp;
+        if(window.XMLHttpRequest){
+            xmlHttp = new XMLHttpRequest();//标准
+        }else{
+            xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");//IE7以下
+        }
+        //发送请求
+        xmlHttp.open('GET','data.json',true);//规定请求的类型、URL 以及是否异步处理请求。
+        xmlHttp.send();//将请求发送到服务器
+        //服务器回调
+        xmlHttp.onreadystatechange=function(){
+            if(xmlHttp.readyState==4 && xmlHttp.status==200){
+                console.log(xmlHttp.responseText);
+            }
+        };
+    };
+
+
+</script>
+</html>
