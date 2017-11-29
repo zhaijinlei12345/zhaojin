@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body, div {
+  color: #ff530d; }
+  body ul, div ul {
+    background: seagreen; }
+
+div {
+  font-size: 23px; }
+
+.col-1 {
+  width: 20px; }
+
+.col-2 {
+  width: 40px; }
+
+.col-3 {
+  width: 60px; }
+
+.col-4 {
+  width: 80px; }
+
+.div {
+  width: 80px; }
+
+/*# sourceMappingURL=extend.css.map */

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+        h1,h2,h3,h4{
+            font-weight:normal;
+        }
+        .page .det {
+            position: fixed;
+            margin-top: 215px;
+            margin-left: 703px;
+            width: 200px;
+            height: 100px;
+            text-align: center;
+
+        }
+
+        .page .img1
+        {
+            background: url("images/home-img.jpg") no-repeat;
+            background-size: cover;
+            background-position: 50% , 50%;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+
+        .page1 {
+            width: 100%;
+            height: 100vh;
+            background:#f1e2d7;
+           -webkit-background-size: cover;
+
+        }
+
+        .page2 {
+            width: 100%;
+            height: 100vh;
+            background:url("images/05.jpg") no-repeat;
+            -webkit-background-size: cover;
+
+
+        }
+
+        .page3 {
+            width: 100%;
+            height: 100vh;
+            background:url("images/05.jpg") no-repeat;
+            -webkit-background-size: cover;
+        }
+
+
+
+        .containter {
+            margin-top: 100px;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background:#f1e2d7 ;
+            left: 0;
+            top: 0;
+        }
+
+        body, html {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /*.dian {*/
+            /*position: absolute;*/
+            /*right: 20px;*/
+            /*top: 50%;*/
+            /*text-align: center;*/
+        /*}*/
+
+        /*.dian ul {*/
+            /*text-align: center;*/
+            /*width: 14px;*/
+        /*}*/
+
+        /*.dian li {*/
+            /*width: 10px;*/
+            /*height: 10px;*/
+            /*border-radius: 50%;*/
+            /*background: #fff;*/
+            /*text-align: center;*/
+            /*margin: 0 auto;*/
+            /*margin-bottom: 10px;*/
+            /*cursor: pointer;*/
+        /*}*/
+
+        /*.dian .da {*/
+            /*width: 14px;*/
+            /*height: 14px;*/
+        /*}*/
+
+        .nav {
+            width: 100%;
+            height: 100px;
+            background:url("images/05.jpg") no-repeat;
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            z-index: 111;
+        }
+        .nav ul{
+            display: flex;
+        }
+
+        .nav li {
+            float: left;
+            width: 100px;
+            height: 30px;
+            margin: 35px 30px;
+            background: grey;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 30px;
+            color: #fff;
+            flex-grow: 1;
+        }
+
+        .nav li a {
+            width: 100px;
+            height: 30px;
+            display: block;
+        }
+
+        .nav .bg {
+            background: burlywood;
+            color: #000;
+        }
+        .page1 .secend{
+            background:#f1e2d7 ;
+            width: 100vw;
+            height: 50%;
+        }
+        .page1 .secend .info{
+            float: right;
+            margin-right: 250px;
+            margin-top: 100px;
+        }
+        .page1 .secend img{
+            height:100%;
+            width:50%;
+
+        }
+        .page1 .secend .info{
+            width: 200px;
+
+            color: grey;
+
+        }
+        .page1 .hobby{
+
+            width: 100%;
+            height: 50%;
+            display: flex;
+
+        }
+        .hobby div{
+            flex-grow: 1;
+        }
+        .hobby .hobby1{
+            background: url("images/home-img.jpg") no-repeat;
+            background-size: cover;
+            background-position: 50% , 50%;
+            height: 100%;
+
+        }
+        .hobby .hobby2{
+            background: url("images/home-img.jpg") no-repeat;
+            background-size: cover;
+            background-position: 50% , 50%;
+            height: 100%;
+        }
+        .hobby .hobby3{
+            background: url("images/home-img.jpg") no-repeat;
+            background-size: cover;
+            background-position: 50% , 50%;
+            height: 100%;
+        }
+
+
+    </style>
+
+</head>
+<body>
+<div class="nav">
+    <ul>
+        <li class='bg'>首页</li>
+        <li>基本信息</li>
+        <li>作品展示</li>
+        <li>专业技能</li>
+    </ul>
+</div>
+<div class="containter">
+    <div class="page current">
+        <div class="img1">
+            <div class="det">
+                <h1> Holle,World </h1>
+                 <h2>欢迎来到我的网站,我是翟金磊</h2>
+                    <p>团队即是个人</p>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="page page1">
+        <div class="secend">
+            <img src="images/contact-img.jpg" alt="">
+            <div class="info">
+                    <ul>
+                        <li>姓名：翟金磊</li>
+                        <li>性别：男</li>
+                        <li>年龄：22岁</li>
+                        <li>学校：黑龙江大学</li>
+                        <li>学院：计算机科学技术学院</li>
+                        <li>专业：物联网工程</li>
+                        <li>家庭地址：内蒙古通辽市</li>
+                        <li>电话：18747862546</li>
+                        <li>QQ:1152005456</li>
+                    </ul>
+            </div>
+
+
+        </div>
+        <div class="hobby">
+            <div class="hobby1"></div>
+            <div class="hobby2"></div>
+            <div class="hobby3"></div>
+        </div>
+    </div>
+    <div class="page page2">
+        <div id="third">欢迎来到我的网站</div>
+    </div>
+    <div class="page page3">
+        <div id="four">欢迎来到我的网站</div>
+    </div>
+
+</div>
+<div class="dian">
+    <ul>
+        <li class='da'></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var nowpage = 0;
+        var lock = true;
+
+        function donghua() {
+            $('.containter').animate({'top': -100 * nowpage + '%'}, 500)
+            $('.page').eq(nowpage).addClass('current').siblings().removeClass('current')
+            $('.dian ul li').eq(nowpage).addClass('da').siblings().removeClass('da')
+            $('.nav ul li').eq(nowpage).addClass('bg').siblings().removeClass('bg')
+        }
+
+        $(document).mousewheel(function (event, delta) {
+            if (lock) {
+                nowpage = nowpage - delta;
+                if (nowpage < 0) {
+                    nowpage = 0;
+                }
+                if (nowpage > 3) {
+                    nowpage = 3;
+                }
+                donghua();
+                lock = false;
+                setTimeout(function () {
+                    // body...
+                    lock = true;
+                }, 1000);
+
+
+            }
+        })
+        $('.nav ul li').click(function (event) {
+            nowpage = $(this).index();
+            if (nowpage <= 3) {
+                donghua();
+            }
+        });
+        $('.dian ul li').click(function (event) {
+            nowpage = $(this).index();
+            donghua();
+        });
+
+    });
+</script>
+</html>

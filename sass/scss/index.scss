@@ -1,0 +1,52 @@
+$aa:#00A6FE;
+$bb:#000;
+$test:'.test';
+$font:'font';
+
+
+
+body{
+  background: #ff530d;
+  #{$font+-size}:14px;
+  #{$font+-family}:'黑体';
+}
+li{
+  color: #00A5FF;
+}
+li{
+  background: bottom;
+}
+div{
+  height: 50px;
+  width: 50px;
+}
+p{
+  background: red;
+}
+a{
+  color: #ff530d;
+}
+table{
+  background: #ff530d;
+}
+h1{
+  color: #ffffff;
+  li{
+    font-style: italic;
+    a{
+      border: 2px;
+      background: scroll;
+    }
+    &:hover{
+      border: 5px;
+      background: seagreen;
+    }
+  }
+
+}
+#{$test +1}{
+ color: #003366;
+}
+p{
+  background: seagreen;
+}

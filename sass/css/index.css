@@ -1,0 +1,43 @@
+@charset "UTF-8";
+body {
+  background: #ff530d;
+  font-size: 14px;
+  font-family: '榛戜綋'; }
+
+li {
+  color: #00A5FF; }
+
+li {
+  background: bottom; }
+
+div {
+  height: 50px;
+  width: 50px; }
+
+p {
+  background: red; }
+
+a {
+  color: #ff530d; }
+
+table {
+  background: #ff530d; }
+
+h1 {
+  color: #ffffff; }
+  h1 li {
+    font-style: italic; }
+    h1 li a {
+      border: 2px;
+      background: scroll; }
+    h1 li:hover {
+      border: 5px;
+      background: seagreen; }
+
+.test1 {
+  color: #003366; }
+
+p {
+  background: seagreen; }
+
+/*# sourceMappingURL=index.css.map */
