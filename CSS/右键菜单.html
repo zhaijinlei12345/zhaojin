@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #menu{
+            width: 100px;
+            border: 1px solid #000000;
+            position: absolute;
+            top:0;
+            left: 0;
+        }
+        #menu li {
+            width: 100px;
+            height: 30px;
+            border-bottom: 1px solid #000000;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
+         li:hover{
+            background: #37C7D4;
+        }
+      #menu{
+          display: none;
+      }
+
+
+    </style>
+</head>
+<body>
+   <ul id="menu">
+       <li>开始</li>
+       <li>下载</li>
+       <li>分享</li>
+       <li>复制</li>
+       <li>删除</li>
+   </ul>
+   <script>
+
+          var oMue= document.getElementById("menu");
+          var oli= oMue.getElementsByTagName("li");
+         document.oncontextmenu = function (e)
+         {
+             e=e || window.event;
+
+                 oMue.style.display="block";
+                 oMue.style.top=e.clientY +"px";
+                 oMue.style.left=e.clientX +"px";
+                 console.log(e);
+                 return false;
+         };
+               for(var i=0;i<oli.length;i++)
+               {
+                   oli[i].onclick = function ()
+                   {
+                     alert(this.innerHTML);
+                   };
+               }
+              document.onclick = function ()
+              {
+                  oMue.style.display="none";
+              };
+
+
+
+
+   </script>
+</body>
+
+</html>

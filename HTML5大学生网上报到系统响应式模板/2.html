@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <!-- UNIFIED -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta  name="keywords" content="毕业报到系统前台"/>
+    <meta name="description" content=""/>
+    <meta name="author" content="f2e_hhf[ai]"/>
+
+    <title>某某市大学生毕业生网上报到系统 </title>
+    <!-- BS CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!--main content +footer-->
+    <link href="dist/css/xg_bybd.css" rel="stylesheet" media="screen">
+    <!--[if lt IE 9]>
+    <script src="dist/js/respond.min.js"></script>
+    <script src="dist/js/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!-- 内容区 -->
+<div class="container xg-bybd aiui">
+    <div class="sys-name"><img  src="images/system-name.png"/> </div>
+    <div class="row">
+        <div class="col-md-2 col-sm-3 step">
+            <h3>报到步骤</h3>
+            <ul>
+                <li  onclick="javascript:window.location.href='index.html' " ><div class="clearfix"><span class="pull-left nav-adorn"><em>1</em></span><span class="pull-left words">阅读注意事项<br/>填写身份证号</span></div></li>
+                <li class="choice" onClick="javascript:window.location.href='2.html'"><div class="clearfix"><span class="pull-left nav-adorn"><em>2</em></span><span class="pull-left words">毕业生报到情况登记表</span></div></li>
+                <li onClick="javascript:window.location.href='3.html'"><div class="clearfix"><span class="pull-left nav-adorn"><em>3</em></span><span class="pull-left words">确认您所填写资料的正确性</span></div></li>
+                <li onClick="javascript:window.location.href='5.html'"><div class="clearfix"><span class="pull-left nav-adorn"><em>4</em></span><span class="pull-left words last-w">完成报到</span></div></li>
+            </ul>
+            <a class="refer-btn" href="5.html">大中专毕业生报到查询</a>
+        </div>
+        <div class="col-md-10 col-sm-9">
+          <div class="r-content sheet">
+              <div class=" form-s1">
+                <div class="row ">
+                  <label class="col-sm-3">姓名：</label>
+                  <div class="col-sm-8 col-md-4"><input class="form-control" placeholder="请输入姓名" type="text"></div>
+                  <div class="col-md-4 col-sm-8 col-sm-offset-3 col-md-offset-0"><label class="tips">姓名中间不能有空格</label></div>
+               </div>
+                <div class="row  mt20">
+                  <label class="col-sm-3">性别：</label>
+                  <div class="col-sm-9">
+                      <ul class="list-inline  radio-box">
+                          <li class="r-selected"><div class="radio  pull-left"><input type="radio"></div><div class="pull-left">男</div></li>
+                          <li><div class="radio  pull-left "><input type="radio"></div><div class="pull-left">女</div></li>
+                      </ul>
+                  </div>
+              </div>
+                <div class="row  mt20">
+                  <label class="col-sm-3">报到证编号：</label>
+                  <div class="col-sm-8 col-md-4"><input class="form-control" placeholder="请输入报到证编号" type="text"></div>
+                  <div class="col-md-4 col-sm-8 col-sm-offset-3 col-md-offset-0"><label class="tips">请用半角阿拉伯数字</label></div>
+              </div>
+                <div class="row  mt20">
+                  <label class="col-sm-3">身份证：</label>
+                  <div class="col-sm-8 col-md-4"><input class="form-control"  type="text" value="442000199012251133" disabled="disabled"/></div>
+                  <div class="col-md-4 col-sm-8 col-sm-offset-3 col-md-offset-0"><label class="tips">请用半角阿拉伯数字</label></div>
+                  <div class="col-md-8 col-sm-offset-3 mt10"><button type="button" class="btn btn-default blue30 btn-blue mr10">选择文件</button><span class="tips">正反身份证扫描件或照片，文件不大于3M</span></div>
+              </div>
+                  <div class="row mt20 ">
+                      <label class="col-sm-3">毕业学校：</label>
+                      <div class="col-sm-8 col-md-4">
+                          <div class="dropdown list-value">
+                              <input class="form-control dropdown-toggle" data-toggle="dropdown" placeholder="请输入毕业学校" aria-expanded="true" type="text">
+                              <ul class="dropdown-menu">
+                                  <li role="presentation"><a href="#">某某第一中学</a></li>
+                                  <li role="presentation"><a href="#">某某第二中学</a></li>
+                                  <li role="presentation"><a href="#">某某第三中学</a></li>
+                                  <li role="presentation"><a href="#">某某第四中学</a></li>
+                                  <li role="presentation"><a href="#">某某第五中学</a></li>
+                                  <li role="presentation"><a href="#">某某第六中学</a></li>
+                                  <li role="presentation"><a href="#">某某第七中学</a></li>
+                                  <li role="presentation"><a href="#">某某第八中学</a></li>
+                                  <li role="presentation"><a href="#">某某第九中学</a></li>
+                                  <li role="presentation"><a href="#">某某第十中学</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row mt20">
+                    <label class="col-sm-3">生源地：</label>
+                    <div class="col-sm-8 col-md-4">
+                    <div class="form-control dropdown">
+                        <a class="w-select dropdown-toggle" data-toggle="dropdown" aria-expanded="false" id="state">
+                            <span class="value">value-1</span><i class="qky-icon">&#xe619;</i></a>
+                        <ul class="dropdown-menu " role="menu">
+                            <li role="presentation"><a href="#">value-2</a></li>
+                            <li role="presentation"><a href="#">value-3</a></li>
+                        </ul>
+                    </div>
+                    </div>
+
+              </div>
+                  <div class="row mt20">
+                      <label class="col-sm-3">所学专业：</label>
+                      <div class="col-sm-8 col-md-4">
+                      <div class="dropdown list-value">
+                          <input class="form-control dropdown-toggle" data-toggle="dropdown" placeholder="请输入所学专业" aria-expanded="true" type="text">
+                          <ul class="dropdown-menu">
+                              <li role="presentation"><a href="#">计算机应用技术</a></li>
+                              <li role="presentation"><a href="#">计算机网络管理</a></li>
+                              <li role="presentation"><a href="#">平面设计视觉传达</a></li>
+                          </ul>
+                      </div>
+                      </div>
+                  </div>
+                  <div class="row mt20">
+                      <label class="col-sm-3">学历层次：</label>
+                      <div class="col-sm-9">
+                          <ul class="list-inline  radio-box">
+                              <li class="r-selected"><div class="radio  pull-left"><input type="radio"></div><div class="pull-left">大专</div></li>
+                              <li><div class="radio  pull-left "><input type="radio"></div><div class="pull-left">高中及以下</div></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="row mt20 ">
+                      <label class="col-sm-3">毕业时间：</label>
+                      <div class="col-sm-8 col-md-4"><input class="form-control timeicon" placeholder="请输入姓名" type="text" onClick="laydate()"></div>
+                  </div>
+                  <div class="row  mt20">
+                      <label class="col-sm-3">就业情况：</label>
+                      <div class="col-sm-9">
+                          <ul class="list-inline  radio-box">
+                              <li class="r-selected"><div class="radio  pull-left"><input type="radio"></div><div class="pull-left">已就业</div></li>
+                              <li><div class="radio  pull-left "><input type="radio"></div><div class="pull-left">暂末就业</div></li>
+                              <li><div class="radio  pull-left "><input type="radio"></div><div class="pull-left">创业</div></li>
+                              <li><div class="radio  pull-left "><input type="radio"></div><div class="pull-left">正在创业</div></li>
+                              <li><div class="radio  pull-left "><input type="radio"></div><div class="pull-left">创业成功</div></li>
+                              <li><div class="radio  pull-left "><input type="radio"></div><div class="pull-left">升学</div></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+              <div class="remark mt20 ">
+              <p class="text-center">*请按照报到证的内容填写登记表, 认真核对报到信息，确认报到后不能修改。</p>
+              </div>
+              <p class="text-center mt20"><button type="button" class="btn btn-default blue30 btn-blue mr10">确认报到</button></p>
+          </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <p>技术支持:某某网络公司  更多模板：<a href="http://www.mycodes.net/" target="_blank">源码之家</a></p>
+</div>
+
+<script src="dist/js/jquery-1.7.1.min.js"></script>
+<script src="dist/js/bootstrap.min.js"></script>
+<script src="dist/js/datepicker/laydate.js"></script>
+<script>
+    $(function () {
+        $(".radio-box li").each(function(index){
+            $(this).click(function(){
+                $(this).parent().find("li").removeClass("r-selected");
+                $(this).addClass("r-selected");
+            });
+
+        });
+    });
+</script>
+
+</body>
+</html>

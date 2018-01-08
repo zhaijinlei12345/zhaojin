@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <!-- UNIFIED -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta  name="keywords" content="毕业报到系统前台"/>
+    <meta name="description" content=""/>
+    <meta name="author" content="f2e_hhf[ai]"/>
+
+    <title>某某市大学生毕业生网上报到系统 </title>
+    <!-- BS CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!--main content +footer-->
+    <link href="dist/css/xg_bybd.css" rel="stylesheet" media="screen">
+    <!--[if lt IE 9]>
+    <script src="dist/js/respond.min.js"></script>
+    <script src="dist/js/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!-- 内容区 -->
+<div class="container xg-bybd aiui">
+    <div class="sys-name"><img  src="images/system-name.png"/> </div>
+    <div class="row">
+        <div class="col-md-2 col-sm-3 step">
+            <h3>报到步骤</h3>
+            <ul>
+                <li onClick="javascript:window.location.href='index.html' " ><div class="clearfix"><span class="pull-left nav-adorn"><em>1</em></span><span class="pull-left words">阅读注意事项<br/>填写身份证号</span></div></li>
+                <li onClick="javascript:window.location.href='2.html'"><div class="clearfix"><span class="pull-left nav-adorn"><em>2</em></span><span class="pull-left words">毕业生报到情况登记表</span></div></li>
+                <li onClick="javascript:window.location.href='3.html'"><div class="clearfix"><span class="pull-left nav-adorn"><em>3</em></span><span class="pull-left words">确认您所填写资料的正确性</span></div></li>
+                <li class="choice"  onclick="javascript:window.location.href='5.html'"><div class="clearfix"><span class="pull-left nav-adorn"><em>4</em></span><span class="pull-left words last-w">完成报到</span></div></li>
+            </ul>
+            <a class="refer-btn" href="5.html">大中专毕业生报到查询</a>
+
+        </div>
+        <div class="col-md-10 col-sm-9">
+            <div class="r-content">
+                <div class="refer-cont">
+                    <div class="row form-s1 checkid">
+                        <div class="col-sm-4 col-md-3 col-md-offset-2"><label>身份证号码：</label></div>
+                        <div class="col-sm-8 col-md-5 "><input class="form-control" placeholder="请输身份证号码" type="text"></div>
+                    </div>
+                    <p class="text-center"><button type="button" class="btn btn-default blue30 btn-blue mr10" data-toggle="modal" data-target=".popdemo_1">查询报道情况</button></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+   <p>技术支持:某某网络公司  更多模板：<a href="http://www.mycodes.net/" target="_blank">源码之家</a></p>
+</div>
+
+
+<div class="modal fade popdemo_1"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+    <div class="modal-dialog win-small">
+        <div class="modal-content  aiui">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="myModalLabel">系统提示</h4>
+            </div>
+            <div class="modal-body ">
+                <div class="bot-box">
+                    <h4>您还没进行报到登记，</h4>
+                    <h4>请先进行报到并录入相关信息!</h4>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <p class="text-center">
+                    <button type="button" class="btn  btn-default  save-btn" data-dismiss="modal" onClick="javascript:window.location.href='index.html' ">确认前往报到</button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="dist/js/jquery-1.7.1.min.js"></script>
+<script src="dist/js/bootstrap.min.js"></script>
+<script src="dist/js/datepicker/laydate.js"></script>
+
+
+</body>
+</html>
