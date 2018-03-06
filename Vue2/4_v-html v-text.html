@@ -7,13 +7,10 @@
 <body>
 <div id="app">
     <!--双花包 插值-->
-     {{msg}}
-    <div v-if="isLogin">欢迎你：唯创</div>
-    <div v-else="isLogin">请登陆 </div>
-    <div v-if="type=='A'">A</div>
-    <div v-else-if="type=='B'">B</div>
-    <div v-else>C</div>
-     <div v-show="show">show</div>
+    <!--{{msg}}-->
+    <div v-text="msg"></div>
+    <div v-text="msg2"></div>
+    <div v-html="msg2"></div>
 </div>
 
 <script src="vue.js"></script>
@@ -23,9 +20,7 @@
         el:'#app',
         data:{
             msg:'hello world',
-            isLogin:true,
-            type:'A',
-            show:true
+            msg2:'<h1>11233<h1>'
         }
     });
      console.log(vm);

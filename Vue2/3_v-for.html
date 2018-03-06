@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--双花包 插值-->
+    <ul>
+        <li v-for="(school,index) in list">{{msg}} {{school}} --{{index}} </li>
+    </ul>
+     <ul>
+         <li v-for="a in Sortarr">{{a}}</li>
+     </ul>
+    <ul>
+    <li v-for=" (item,a,b) in obj">{{a}}:{{item}} --{{b}}</li>
+</ul>
+    <ul>
+        <li v-for="val in arrobj">{{val.name}}--{{val.age}}</li>
+    </ul>
+</div>
+
+<script src="vue.js"></script>
+<script>
+    // 类 对象
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            msg:'hello world',
+            list:['黑大','林大','理工'],
+            arr:[1,2,3,5,7,9,0,4],
+            obj:{
+                name:'zhangsan',
+                age:125,
+                sex:'ana'
+            },
+            arrobj:[
+                {
+                    name:'zhangsan',
+                    age:125,
+                    sex:'a'
+                },
+                {
+                    name:'san',
+                    age:15,
+                    sex:'ana'
+                },
+                {
+                    name:'zhan',
+                    age:125,
+                    sex:'aa'
+                }
+
+            ]
+        },
+        computed:{
+            Sortarr:function () {
+                return this.arr.sort(function (a,b) {
+                    return a-b;
+                });
+            }
+        }
+    });
+    console.log(vm);
+</script>
+</body>
+</html>

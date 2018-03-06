@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div1{
+            width: 400px;
+            height: 400px;
+            background: darkorange;
+        }
+        .div2{
+            width: 200px;
+             height: 200px;
+            background: #37C7D4 ;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <button @click="add(2 ,$event)">加1</button>
+<!--<button @click.once="add(2 ,$event)">加1</button>-->
+    <div>{{count}}</div>
+    <button v-on="{ mousedown: doThis, mouseup: doThat }">qewe</button>
+    <!--<input type="text" @keyup.enter="handler" >-->
+    <input type="text" @keyup.13="handler" v-model="keyword">
+    <div class="div1" @click="clickdiv1">
+        <div class="div2" @click.stop="clickdiv2"></div>
+    </div>
+</div>
+<a href="http://www.baidu.com" @click.prevent="mms($event)">baidu</a>
+<script src="vue.js"></script>
+<script>
+    // 类 对象
+    var vm = new Vue({
+        el:'#app',
+        data:{
+           count:0,
+            keyword:0
+        },
+        methods:{
+            add:function (num,e) {
+                this.count+=num;
+               console.log(e);
+            },
+            handler:function () {
+                this.count+=parseInt(this.keyword);
+             },
+            doThis:function () {
+                console.log('12213');
+            },
+            doThat:function () {
+                console.log('787887');
+            },
+            clickdiv1:function () {
+                console.log('fu');
+            },
+            clickdiv2:function () {
+                console.log('zi');
+
+            },
+            mms:function (e) {
+
+            }
+        }
+    });
+     console.log(vm);
+</script>
+</body>
+</html>
