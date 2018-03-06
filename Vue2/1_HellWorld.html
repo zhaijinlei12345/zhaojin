@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--双花包 插值-->
+     {{msg}}
+</div>
+
+<script src="vue.js"></script>
+<script>
+// 类 对象
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            msg:'hello world'
+        }
+    });
+     console.log(vm);
+</script>
+</body>
+</html>
