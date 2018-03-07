@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .aa{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        .bb{
+            width: 100px;
+            height: 100px;
+            background: hotpink;
+        }
+        .cc{
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+<!--当属性值不是写死的时候用v-bind，有灵活性，可以动态修改-->
+<div id="app">
+    <!--<img v-bind:src="imgSrc"  v-bind:alt="imgAlt">-->
+    <img :src="imgSrc" :alt="imgAlt">
+
+    <input type="text" v-model="clsname" placeholder="aa">
+    <div :class="clsname">AA</div>
+    <!--{bb:isbb} 通过true false来控制bb的样式出现-->
+    <div :class="{bb:isbb}">BB</div>
+    <!--样式设计方法一（直接绑定样式对象）-->
+    <div :style="styleObj">sss</div>
+    <!--样式设计方法二-->
+    <input type="text" v-model="ground" placeholder="blue">
+    <div :style="{background:ground,fontSize:fontSize+'px'}">aaaa</div>
+</div>
+
+<script src="vue.js"></script>
+<script>
+// 类 对象
+    var vm = new Vue({
+        el:'#app',
+        data:{
+           imgSrc:'https://cn.vuejs.org/images/logo.png',
+           imgAlt:'图片加载失败',
+            clsname:'aa',
+            isbb:true,
+            ground:'blue',
+            fontSize:'50',
+            styleObj:{
+               width:'200px',
+                background:'#ccc',
+//               background-color
+                backgroundColor:'#ccc'
+
+            }
+        }
+    });
+     console.log(vm);
+</script>
+</body>
+</html>

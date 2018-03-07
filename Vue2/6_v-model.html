@@ -6,14 +6,21 @@
 </head>
 <body>
 <div id="app">
-    <!--v-model 进行表单的数据双项绑定-->
+    <!--v-model 进行表单的数据双项绑定 MVVM模式-->
     <!--<input type="text" @keyup.13="handler" v-model="keyword">-->
     <!--v-model   input框中的值-->
     <!--<div>{{msg}}</div>-->
     <!--<input type="text" v-model="msg">-->
+    <!--lazy:顾名思义：数据绑定时不是立即修改数据，而是焦点失去时更改数据；
+     number：保留数字信息，其他一律过滤掉
+       trim：去掉input框前面的空格
+-->
     <form action="">
 
         <label>用户名：<input type="text" v-model="username" placeholder="请输入用户名"></label>
+        <label>用户名lazy：<input type="text" v-model.lazy="username" placeholder="请输入用户名"></label>
+        <label>用户名number：<input type="text" v-model.number="username" placeholder="请输入用户名"></label>
+        <label>用户名trim：<input type="text" v-model.trim="username" placeholder="请输入用户名"></label>
         <div>{{username}}</div>
         性别：
         <input type="radio" v-model="sex" value="男">男
