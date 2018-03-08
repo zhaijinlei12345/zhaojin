@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #app{
+            width: 500px;
+            margin: 100px auto;
+        }
+        h1{
+            text-align: center;
+        }
+        #list li{
+            background: grey;
+            font-size: 20px;
+            height: 50px;
+            margin-top: 50px;
+            line-height: 50px;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+        .name{
+            float: left;
+        }
+        .price{
+            float: right;
+        }
+        .del{
+            float: right;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        #list .red{
+            background: red;
+        }
+     </style>
+</head>
+<body>
+<div id="app">
+ <h1>todolist</h1>
+    <hr>
+    <div>
+        <label>名称：<input type="text" v-model="name" placeholder="请输入商品名称"></label>
+        <label>价格：<input type="text" v-model="price"placeholder="请输入商品价格" ></label>
+        <button @click="add">添加</button>
+    </div>
+    <div>
+        <input type="text" v-model="keyword" placeholder="请输入关键词">
+        <button @click="search" >搜索</button>
+    </div>
+
+    <ul id="list">
+        <li v-for="(val,index) in productlist" @click="select(val)" :class="{red:val.isred}" >
+            <span class="del" @click.stop="del(index)" >[X]</span>
+            <input type="checkbox" @click.stop="" v-model="allselect" :value="index">
+            <span class="name" v-text="val.name"></span>
+            <span class="price" v-text="val.price"></span></li>
+
+    </ul>
+    总价:<div id="total" v-text="total">
+    </div>
+    <!----------方法三--------->
+    <div v-text="this.sum()"></div>
+     <button @click="delselect">删除选中</button>
+</div>
+
+<script src="vue.js"></script>
+<script>
+// 类 对象
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            total:0,
+            name:"",
+            price:"",
+            allselect:[],
+            keyword:"",
+         productlist:[
+             {
+                 name:'衣服',
+                 price:205,
+                 isred:false
+             },
+             {
+                 name:'裤子',
+                 price:205,
+                 isred:false
+             },
+             {
+                 name: '鞋',
+                 price: 205,
+                 isred:false
+             }
+             ]
+
+        },
+        methods:{
+            select:function (a) {
+                a.isred=!a.isred;
+//               -------- 方法一---------
+//                if(a.isred==true){
+//                    this.total+=parseInt(a.price);
+//                }else {
+//                    this.total-=parseInt(a.price);
+//                }
+//                ------方法二-------
+                this.sum();
+            } ,
+            sum:function () {
+//                每次清零重新计算
+                var sum=0;
+                this.productlist.forEach(function (val){
+                 if(val.isred==true){
+                   sum+=parseInt(val.price);
+                 }
+                });
+//                方法二结果赋值------
+                this.total=sum;
+//                方法三结果返回------
+               return sum;
+            },
+            add:function () {
+
+               this.productlist.push({
+                   name: this.name,
+                   price: this.price,
+                   isred:false
+               });
+                    this.name="";
+                        this.price="";
+            },
+            del:function (index) {
+//                splice(a,b,c);a:必须写，为删除或添加的位置，b:删除的个数,c：添加的个数
+                this.productlist.splice(index, 1);
+            },
+//            多删除问题在于多个删除是第一删除，导致接下来的索引改变，所以会删除错误（数组下标改变）
+            delselect:function () {
+//                  方法一 遍历allselec方法中，forEach 导致this指向的作用域改变；所以用箭头函数
+//                     this.allselect.forEach(function (val) {
+//                         this.productlist.splice(val, 1);
+//                     });
+//                将没被选中的数据重新赋给productlist,filter是可以进行遍历，同时返回一个满足条件的新数组；
+                let arr=this.productlist.filter((val,idx) => {
+                   if(!this.allselect.includes(idx)){
+                       return val;
+                   }
+                });
+                   this.productlist = arr;
+                   this.allselect = [];
+//                ----------遍历方法二但是不能多删除 数组下标改变--------
+//                for(var i in this.allselect){
+//                    this.productlist.splice(i, 1);
+//                }
+            },
+            search:function () {
+                this.keyword;
+                let arr=this.productlist.filter((val,key) => {
+                    if(val.name.includes(this.keyword)){
+                        return val;
+                    }
+                });
+                this.productlist = arr;
+            }
+        }
+    });
+     console.log(vm);
+</script>
+</body>
+</html>
