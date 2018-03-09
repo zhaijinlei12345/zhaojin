@@ -55,6 +55,8 @@
     <div>
         <input type="text" v-model="keyword" placeholder="请输入关键词">
         <button @click="search" >搜索</button>
+        <button @click="rest" >恢复默认</button>
+
     </div>
 
     <ul id="list">
@@ -99,11 +101,13 @@
                  price: 205,
                  isred:false
              }
-             ]
+             ],
+            restf:[]
 
         },
         methods:{
             select:function (a) {
+                this.restf = this.productlist;
                 a.isred=!a.isred;
 //               -------- 方法一---------
 //                if(a.isred==true){
@@ -138,6 +142,7 @@
                         this.price="";
             },
             del:function (index) {
+
 //                splice(a,b,c);a:必须写，为删除或添加的位置，b:删除的个数,c：添加的个数
                 this.productlist.splice(index, 1);
             },
@@ -168,8 +173,13 @@
                     }
                 });
                 this.productlist = arr;
+            },
+            rest:function () {
+                this.productlist = this.restf;
+
             }
         }
+
     });
      console.log(vm);
 </script>
