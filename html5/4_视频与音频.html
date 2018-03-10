@@ -5,9 +5,53 @@
     <title>Title</title>
 </head>
 <body>
-    <!--<video src="11.mp4" autoplay loop width="500px" height="400px" controls></video>-->
-
+ <!--   &lt;!&ndash;<video src="11.mp4" autoplay loop width="500px" height="400px" controls></video>&ndash;&gt;
+    &lt;!&ndash;Ogg 文件，适用于Firefox、Opera 以及 Chrome 浏览器。&ndash;&gt;
     <audio src="Love%20Story.mp3" autoplay controls></audio>
+    &lt;!&ndash;<video src="god.ogg" controls="controls" width="500" height="500" ></video>&ndash;&gt;
+    &lt;!&ndash;video 元素允许多个 source 元素。source 元素可以链接不同的视频文件。浏览器将使用第一个可识别的格式&ndash;&gt;
+    <video  controls="controls" width="500" height="500" loop="loop" >
+        <source src="god.ogg" type="video/ogg">
+        <source src="god.mp4" type="video/mp4">
+    </video>-->
+ <div style="text-align:center;">
+     <button onclick="playPause()">播放/暂停</button>
+     <button onclick="makeBig()">大</button>
+     <button onclick="makeNormal()">中</button>
+     <button onclick="makeSmall()">小</button>
+     <br />
+     <video id="video1" width="420" style="margin-top:15px;">
+         <source src="god.mp4" type="video/mp4" />
+         <source src="god.ogg" type="video/ogg" />
+         Your browser does not support HTML5 video.
+     </video>
+ </div>
 
+ <script type="text/javascript">
+     var myVideo=document.getElementById("video1");
+
+     function playPause()
+     {
+         if (myVideo.paused)
+             myVideo.play();
+         else
+             myVideo.pause();
+     }
+
+     function makeBig()
+     {
+         myVideo.width=560;
+     }
+
+     function makeSmall()
+     {
+         myVideo.width=320;
+     }
+
+     function makeNormal()
+     {
+         myVideo.width=420;
+     }
+ </script>
 </body>
 </html>

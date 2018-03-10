@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8">
     <style type="text/css">
-        #div1 {
+        #div1 ,#div2 {
             width: 150px;
             height: 150px;
             padding: 10px;
-            border: 1px solid #aaaaaa;
+            border: 1px solid blueviolet;
         }
     </style>
     <script type="text/javascript">
@@ -20,7 +20,7 @@
         }
 
         function drop(ev) {
-            ev.preventDefault();
+
             var data = ev.dataTransfer.getData("Text");
             ev.target.appendChild(document.getElementById(data));
         }
@@ -32,7 +32,10 @@
 
 <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 <br/>
-<img id="drag1" src="1.jpg" draggable="true" ondragstart="drag(event)"/>
+<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <img id="drag1" src="1.jpg" draggable="true" ondragstart="drag(event)"/>
+
+</div>
 
 </body>
 </html>
