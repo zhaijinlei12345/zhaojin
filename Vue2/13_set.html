@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+ <div id="app">
+     <button @click="change">e</button>
+     <ul>
+         <li v-for="item in list">{{item}}</li>
+     </ul>
+ </div>
+
+<script src="vue.js"></script>
+
+<script>
+    new Vue({
+       el:'#app',
+        data:{
+           list:['a','b','c','d']
+        },
+        methods:{
+           change(){
+//               下方无法改值，因为在vue无法通过下标改数组的中
+//               this.list[1]='e';
+//          同样无法使用       this.list.length=0;
+   //            第一个参数：操作的数组 第二个：数组改变数的位置，第三个:新的值
+                   Vue.set(this.list,1,'e')
+//             注意：vue不能通过索引设置数组中的值
+           }
+        }
+    });
+</script>
+</body>
+</html>

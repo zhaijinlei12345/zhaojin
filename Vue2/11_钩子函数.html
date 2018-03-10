@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h1 v-zjl="aa">1248</h1>
+</div>
+<script src="vue.js"></script>
+<script>
+//    Vue.directive('zjl',function (el,binding,vnode) {
+//      console.log(el);
+//        console.log(binding);
+//        console.log(vnode);
+//        el.style.background=binding.value;
+//    });
+Vue.directive('zjl',{
+    bind(el,binding,vnode){
+     console.log('bind');
+     el.style.background=binding.value;
+    },
+    inserted(){
+        console.log('5');
+    },
+    update(){
+        console.log('b8');
+    },
+    componentUpdated(){
+        console.log('10');
+    } ,
+    unbind(){
+        console.log('jsdo');
+    }
+
+
+});
+    new Vue({
+        el:"#app",
+        data:{
+            aa:'red'
+
+        },
+        methods:{
+
+        }
+    })
+</script>
+</body>
+</html>
