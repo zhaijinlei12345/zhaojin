@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <img src="ingsrc" alt="">
+    <zjl :cc="msg3"></zjl>
+    <myzjl :aa="msg" :bb="msg2"></myzjl>
+    <!--template 不占dom结构-->
+    <!--<template v-if="isshow">-->
+        <!--<h1>11111</h1>-->
+        <!--<h1>22255</h1>-->
+        <!--<h1>58684 </h1>-->
+    <!--</template>-->
+</div>
+<div id="app2">
+    <zjl></zjl>
+    <!--局部变量无法在其他作用域-->
+    <!--<myzjl></myzjl>-->
+</div>
+<script src="vue.js"></script>
+<script>
+    Vue.component('zjl',{
+        template: '<h1>{{cc}}</h1>',
+        props:['cc']
+    });
+    new  Vue({
+        el:'#app',
+        data:{
+            msg:'罪案',
+            msg2:'破解',
+            msg3:'万代',
+            imgsrc:"1.jpg"
+        },
+        components:{
+             myzjl:{
+                 template: `<h1>{{aa}}{{bb}}</h1>`,
+                 props:['aa','bb']
+             }
+
+        }
+    });
+    new  Vue({
+        el:"#app2"
+    });
+</script>
+</body>
+</html>
