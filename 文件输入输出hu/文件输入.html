@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+</head>
+<body>
+<input type="file" id="input">
+<span id="preview"></span>
+<script src="FileSaver.js"></script>
+<script type="text/javascript">
+    (function(){
+        var input = document.querySelector('#input');
+        var span = document.querySelector('#preview');
+        input.addEventListener('change', function(e){
+            handFile(e.target.files[0]);
+        });
+
+        function handFile(file){
+            var reader = new FileReader();
+            reader.onload = function(e){
+                span.innerText = e.target.result;
+                var text_array=this.result.split("\n") ;
+
+                var arr=[] ;
+
+                var y,f,t ;//定义一个数组arr
+                var  k=['('],h=[')'];
+                for(var i=0;i<text_array.length-1;i++){//for循环数组，其中最大值为数组的长度
+
+                      y  = text_array[i].slice(1,2) ;//为所有数组元素都拼接上c，变成ac,bc
+                      f  = text_array[i].slice(2,3) ;
+                      t  = text_array[i].slice(0,1) ;
+                    arr[i]= y+=f+=t+="-";
+                }
+                var str=arr.join(",");
+                console.log(arr);
+                console.log(str);
+
+                var files = new File([str], "文件导出测试.txt", {type: "text/plain;charset=utf-8"});
+                saveAs(files);
+            };
+            reader.readAsText(file);
+        }
+
+
+    })();
+</script>
+</body>
+</html>
+
+
+
+
+<!--<html>-->
+<!--<head>-->
+    <!--<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />-->
+    <!--<title>无标题文档</title>-->
+    <!--<script type="text/javascript">-->
+        <!--function readAsText()-->
+        <!--{-->
+            <!--var file=document.getElementById("file").files[0];-->
+            <!--var reader=new FileReader();-->
+            <!--reader.readAsText(file);-->
+            <!--reader.onload=function(e)-->
+            <!--{-->
+                <!--var result=document.getElementById("result");-->
+                <!--console.log(this.result);-->
+                <!--result.innerHTML=this.result;-->
+            <!--}-->
+        <!--}-->
+    <!--</script>-->
+<!--</head>-->
+
+<!--<body>-->
+<!--请选择文本文件:<input type="file" id="file" /><input type="button" value="显示文本文件" onclick="readAsText();"/>-->
+
+<!--<div name="result" id="result">-->
+    <!--&lt;!&ndash;这里显示文件内容&ndash;&gt;-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->

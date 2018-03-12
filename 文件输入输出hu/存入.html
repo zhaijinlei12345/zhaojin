@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    var ForWriting = 2;
+    var strFile = "c:\\me.txt";
+    var objFSO = new ActiveXObject("Scripting.FileSystemObject");
+    // 检查文件是否存在
+    if (objFSO.FileExists(strFile)) {
+        // 打开文本文件
+        var objStream = objFSO.OpenTextFile(strFile, ForWriting, true, false);
+        // 写入字符串数据
+        objStream.WriteLine("JavaScript的FileSystemObject对象");
+        objStream.WriteLine("JavaScript写入文本文件的内容");
+        document.write("写入文本文件" + strFile + "成功<br>");
+        objStream.Close();  // 关闭文件
+    }
+    else{
+        alert(错误)
+    }
+        document.write("文本文件: " + strFile + "不存在<br>");
+</script>
+</body>
+</html>
