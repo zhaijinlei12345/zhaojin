@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--<input type="text" v-model="msg">-->
+    <!--<h1 v-html="msg"></h1>-->
+    <input type="text" id="ipt">
+    <h1 id="h1"></h1>
+
+</div>
+ <!--<script src="vue.js"></script>-->
+<script>
+//    new Vue({
+//        el:"#app",
+//        data:{
+//            msg:''
+//        },
+//        绑定原理ES5语法 Object.defineProperty(),不支持IE8，所以VUe不支持
+//      第一个参数是一个对象， 第二个参数是监测对象的哪一个属性，第三个参数是对象，含有get值盒set
+      var Ipt=document.getElementById('ipt');
+      var obj ={};
+      Ipt.onkeyup=function () {
+         obj.name= this.value;
+      };
+
+
+        Object.defineProperty(obj,'name' ,{
+             get:function () {
+
+             },
+            set:function (val) {
+//                 console.log(val);  val为当前输入的值
+                document.getElementById('h1').innerHTML=val;
+
+            }
+        });
+//虚拟Dom在内存中，真实渲染在浏览器中，当状态改变时，虚拟dom利用js模仿了类似dom树的数据结构，
+//dom改变进行比对找出改变的地方，将改变的东西渲染在真实的dom节点上 diff为对比算法 key可以便于重建dom树
+//diff算
+  //  })
+</script>
+</body>
+</html>

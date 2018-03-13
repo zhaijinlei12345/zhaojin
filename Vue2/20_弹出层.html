@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .dialog-mask{
+            position:absolute;
+            top:0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #5e5e5e;
+
+        }
+        .dialog-box{
+            width: 500px;
+            height: 400px;
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform:translate(-50%,-50%);
+            border: 1px solid;
+        }
+        .dialog-title{
+            height: 30px;
+            background: black;
+            color: white;
+            line-height: 30px;
+            padding: 0 10px;
+
+        }
+        .close{
+            float: right;
+            cursor: pointer;
+        }
+        .title{
+            float: left;
+        }
+    </style>
+
+</head>
+<body>
+<div id="app">
+    <button @click="Login">登录</button>
+    <button @click="Register">注册</button>
+    <!--登录组件-->
+    <my-dialog v-show="showLogin" @close="showLogin=false">
+        <span slot="item">登录</span>
+        <div slot="login-content">
+            <table>
+                <tr>
+                    <label>
+                        <td>用户名：</td>
+                        <td><input type="text"></td>
+                    </label>
+                </tr>
+                <tr>
+                    <label>
+                        <td>密码：</td>
+                        <td><input type="password"></td>
+                    </label>
+                </tr>
+            </table>
+            <input type="submit" value="登录">
+        </div>
+    </my-dialog>
+    <!--注册组件-->
+    <my-dialog v-show="showRegister" @close="showRegister=false">
+        <span slot="item">注册</span>
+        <div slot="login-content">
+            111
+            222
+            33
+            444
+        </div>
+    </my-dialog>
+
+</div>
+<template id="dialog">
+<div class="dialog-mask">
+ <div class="dialog-box">
+     <div class="dialog-title">
+         <span class="title">
+             <slot name="item"> 无标题</slot>
+         </span>
+         <!--$emit()将触发事件抛出(这里无法触发click事件，所以引入"$emit)-->
+         <span class="close"  @click="$emit('close')">[X]</span>
+     </div>
+     <div class="dialog-content">
+      <slot name="login-content"></slot>
+     </div>
+ </div>
+</div>
+</template>
+
+<script src="vue.js"></script>
+<script>
+    new Vue({
+       el:'#app',
+        components:{
+           myDialog:{
+               template:'#dialog'
+           }
+        },
+        data:{
+            showLogin:false,
+            showRegister:false
+        },
+        methods:{
+           Login(){
+               this.showLogin=true;
+           },
+            Register(){
+                this.showRegister=true;
+            }
+
+        }
+
+    });
+</script>
+</body>
+</html>

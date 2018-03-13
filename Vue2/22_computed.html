@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    {{firstName}}+
+    {{lastName}}=
+    {{fullName}}
+</div>
+
+<script src="vue.js"></script>
+<script>
+
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            firstName: 'Foo',
+            lastName: 'Bar',
+            fullName:''
+        },
+//        计算属性产生一些缓存
+//        computed: {
+//            fullName: function () {
+//                return this.firstName + ' ' + this.lastName
+//            }
+//        }
+//        监听属性
+        watch:{
+//            当val值被改变时调用当时方法
+            firstName: function (val) {
+                this.fullName = val + ' ' + this.lastName
+            },
+            lastName: function (val) {
+                this.fullName = this.firstName + ' ' + val
+            }
+        }
+    })
+</script>
+</body>
+</html>

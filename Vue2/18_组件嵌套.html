@@ -6,7 +6,8 @@
 </head>
 <body>
 <div id="app1">
-    <wec :fnmsg="msg"></wec>
+    <wec :fnmsg="msg" @click.native="add"></wec>
+    <div>{{num}}</div>
     <!--局部变量无法在其他作用域-->
     <!--<myzjl></myzjl>-->
 </div>
@@ -18,7 +19,7 @@
     };
     let wcwx={
         template:`<div>
-                  <h1> 这是父组件</h1>
+                  <h1> 这是父组件{{fnmsg}}</h1>
                     <fe :aa="fnmsg"></fe>
                 </div>
                 `
@@ -31,8 +32,14 @@
     new  Vue({
         el:"#app1",
            data:{
-            msg:'子组件'
+            msg:'子组件',
+               num:1
            },
+        methods:{
+            add(){
+                this.num++;
+            }
+        },
         components:{
             wec:wcwx
         }

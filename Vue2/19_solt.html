@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <zjl>
+        <h1 slot="username">李四</h1>
+        <span slot="age">18</span>
+    </zjl>
+    <zjl>
+        <span slot="username">张三</span>
+        <span slot="age"></span>
+    </zjl>
+
+</div>
+<template id="temp">
+    <div>
+     <div>
+         名字：<slot name="username"></slot>
+     </div>
+        <div>
+            年龄：<slot name="age">20</slot>
+        </div>
+    </div>
+
+</template>
+<script src="vue.js"></script>
+<script>
+    new Vue({
+        el:"#app",
+         components:{
+            zjl:{
+                template:'#temp'
+            }
+
+         }
+    })
+
+</script>
+</body>
+</html>
