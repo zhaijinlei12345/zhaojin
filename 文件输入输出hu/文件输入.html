@@ -12,7 +12,6 @@
 <script type="text/javascript">
     (function(){
         var input = document.querySelector('#input');
-        var span = document.querySelector('#preview');
         input.addEventListener('change', function(e){
             handFile(e.target.files[0]);
         });
@@ -20,25 +19,23 @@
         function handFile(file){
             var reader = new FileReader();
             reader.onload = function(e){
-                span.innerText = e.target.result;
                 var text_array=this.result.split("\n") ;
-
                 var arr=[] ;
-
-                var y,f,t ;//定义一个数组arr
-                var  k=['('],h=[')'];
+                var y,f,t ,k ;//定义一个数组arr
+                var d='-';
                 for(var i=0;i<text_array.length-1;i++){//for循环数组，其中最大值为数组的长度
-
-                      y  = text_array[i].slice(1,2) ;//为所有数组元素都拼接上c，变成ac,bc
-                      f  = text_array[i].slice(2,3) ;
-                      t  = text_array[i].slice(0,1) ;
-                    arr[i]= y+=f+=t+="-";
+                      y  = text_array[i].slice(15,23) ;//为所有数组元素都拼接上c，变成ac,bc
+                      f  = text_array[i].slice(87,88) ;
+                      t  = text_array[i].slice(88,92);
+                      k = parseInt(t);
+                    if(f =="+"){
+                         arr[i]= y+=k;
+                       }else {
+                           arr[i]= y+=f+=k;
+                      }
                 }
-                var str=arr.join(",");
-                console.log(arr);
-                console.log(str);
-
-                var files = new File([str], "文件导出测试.txt", {type: "text/plain;charset=utf-8"});
+                var str=arr.join("\n");
+                var files = new File([str], "实验数据.txt", {type: "text/plain;charset=utf-8"});
                 saveAs(files);
             };
             reader.readAsText(file);
