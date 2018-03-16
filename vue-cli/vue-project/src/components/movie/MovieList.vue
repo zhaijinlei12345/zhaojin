@@ -32,14 +32,16 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped> 
      .top250{
-    
-      padding: 0.4rem;
+     
+       padding: 0.4rem;
       margin: 0.4rem 0;
+      
        
      }
      .movie-title{
        float: left; 
        margin-left:0.6rem; 
+       margin-top: 0.2rem;
        width: 4.0rem;
        border-bottom: 1px #ccc solid;
 
@@ -47,7 +49,7 @@ export default {
      }  
    .movie-img{
        float: left;
-       height: 0.8rem;
+       height: 1rem;
        width: 0.8rem;
      }  
       .movie-img img{
