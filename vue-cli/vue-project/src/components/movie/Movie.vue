@@ -3,12 +3,14 @@
     <common-header></common-header>
     <movie-nav></movie-nav>
     <div class="list">
-      <movie-list v-for="obj in movieList" :title="obj.title"
-       :year="obj.year" :avg="obj.avg" :desc="obj.desc"
+      <movie-list v-for="obj in movieList" :title="obj.nm"
+       :year="obj.snum" :avg="obj.sc" :img="obj.img" :desc="obj.cat"
       ></movie-list>
        
     </div>
-    
+    <div class="loading" v-show="isShow">
+    <img src="../../../static/img/1.gif" alt="">
+    </div>
    <common-footer></common-footer>
    </div>
 </template>
@@ -17,46 +19,46 @@ import CommonHeader from "../common/CommonHeader"
 import CommonFooter from "../common/CommonFooter"
 import MovieNav from "./MovieNav"
 import MovieList from "./MovieList"
+import Axios from 'axios'
 export default {
   name: 'Movie',
   data () {
+   
     return {
        movieList:[
-        {
-          title:"霸王北极",
-          year:1994,
-          avg:9.6,
-          desc: [
-            "同行",
-            "爱情",
-            "悬疑"
-          ]
-        },  
-         {
-          title:"唐人街探案",
-          year:2015,
-          avg:9.6,
-          desc: [
-            "犯罪",
-            "暴力",
-            "悬疑"
-          ]
-        },
-         {
-          title:"霸王防脱",
-          year:2005,
-          avg:9.6,
-          desc: [
-            "成龙",
-            "惊悚",
-            "Duang"
-          ]
-        }    
-      ]
+        
+      ] ,
+      isShow :false
     
     }
      
   },
+  mounted(){
+    let _this  = this;
+    window.onscroll =function(){
+      let scrollTop = document.documentElement.scrollTop;
+      let clientHeight =document.documentElement.clientHeight;
+      let htmlHeight = document.documentElement.scrollHeight;
+     
+      if(scrollTop+clientHeight>=htmlHeight){
+           _this.isShow=true;
+          _this.loaddata();
+        
+      }
+  }
+  // http://api.douban.com/v2/movie/top250?count=10&start=10
+    this.loaddata();
+  },
+  methods:{
+  loaddata(){
+   Axios.get(API_PROXY+"http://m.maoyan.com/movie/list.json?type=hot&offset="+this.movieList.length+"&limit=10")
+  .then((res)=>{
+    this.movieList = this.movieList.concat(res.data.data.movies);
+       this.isShow=false; 
+  });
+  }
+  },
+
   components:{
      CommonHeader,
      CommonFooter,
@@ -69,6 +71,15 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
     .list{
-      margin-top: 2rem;
-     }   
+      margin: 2rem 0 1.7rem; 
+     } 
+     .loading{
+        /* position: fixed;
+        bottom: 1.5rem;
+        width: 1rem; */
+        width: 2rem;
+        height: 2rem;
+        margin-bottom: 1rm;
+        /* text-align: center; */
+     }  
 </style>
