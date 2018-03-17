@@ -1,9 +1,9 @@
 <template>
   <div class="movie">
-    <common-header></common-header>
+    <common-header title="Movie"bgColor="rgb(33, 150, 243)"></common-header>
     <movie-nav></movie-nav>
     <div class="list">
-      <movie-list v-for="obj in movieList" :title="obj.nm"
+      <movie-list v-for="(obj,index) in movieList" :key="index" :title="obj.nm"
        :year="obj.snum" :avg="obj.sc" :img="obj.img" :desc="obj.cat"
       ></movie-list>
        
@@ -11,7 +11,7 @@
     <div class="loading" v-show="isShow">
     <img src="../../../static/img/1.gif" alt="">
     </div>
-   <common-footer></common-footer>
+   <common-footer FColor="rgb(33, 150, 243)"></common-footer>
    </div>
 </template>
 <script>

@@ -1,18 +1,18 @@
 <template>
-  <div class="footer">
+  <div class="footer" :style="{background:FColor}">
     <ul>
-      <li>电影</li>
-      <li>音乐</li> 
-      <li>读书</li>
-      <li>图片</li>
+      <li><router-link to="/movie">电影</router-link></li>
+      <li><router-link to="/music">音乐</router-link></li> 
+      <li><router-link to="/book">读书</router-link></li>
+      <li><router-link to="/photo">图片</router-link></li>
     </ul>
    </div>
 </template>
 
 <script>
 export default {
-  name: 'Movie',
-  data () {
+  props:['FColor'],
+  data (){
     return {
       msg: 'Welcome to Your Vue.js App'
     }
@@ -24,7 +24,6 @@ export default {
 <style scoped>
        .footer{
          height: 1rem;
-         background: rgb(33, 150, 243);
          color: white;
          position: fixed;
          bottom: 0;
@@ -38,7 +37,12 @@ export default {
        .footer li{
          text-align: center;
          line-height: 1rem;
-          color: #fff;
          flex:  1;
        }
+       .footer li a{
+         color: #ccc;
+       }
+        .footer li a.router-link-active{
+          color: #fff;
+        }
 </style>
