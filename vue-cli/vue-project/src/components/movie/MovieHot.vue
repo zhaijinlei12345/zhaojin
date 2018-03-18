@@ -1,29 +1,23 @@
 <template>
-  <div class="movie">
-    <common-header title="Movie"bgColor="rgb(33, 150, 243)"></common-header>
-    <movie-nav></movie-nav>
-    <<router-view></router-view>
-    <div class="loading" v-show="isShow">
-    <img src="../../../static/img/1.gif" alt="">
+
+    <div class="list">
+      <movie-list v-for="(obj,index) in movieList" :key="index" :title="obj.nm"
+       :year="obj.snum" :avg="obj.sc" :img="obj.img" :desc="obj.cat"
+      ></movie-list>
     </div>
-   <common-footer FColor="rgb(33, 150, 243)"></common-footer>
-   </div>
+    
 </template>
+
+
+
 <script>
-import CommonHeader from "../common/CommonHeader"
-import CommonFooter from "../common/CommonFooter"
-import MovieNav from "./MovieNav"
 import MovieList from "./MovieList"
 import Axios from 'axios'
 export default {
-  name: 'Movie',
   data () {
    
-    return {
-       movieList:[
-        
-      ] ,
-      isShow :false
+    return { 
+       movieList:[] ,
     
     }
      
@@ -53,26 +47,16 @@ export default {
   });
   }
   },
-
   components:{
-     CommonHeader,
-     CommonFooter,
-     MovieNav,
-     MovieList
+      MovieList
   }
+
 }
 </script>
+  <style>
+    .list{
+      margin: 1.4rem 0 1.7rem; 
+     } 
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-    
-     .loading{
-        /* position: fixed;
-        bottom: 1.5rem;
-        width: 1rem; */
-        width: 2rem;
-        height: 2rem;
-        margin-bottom: 1rm;
-        /* text-align: center; */
-     }  
-</style>
+  </style>
+  
