@@ -34,7 +34,7 @@ import APlayer from "vue-aplayer"
                   obj.author = this.musicData[i].author;
                   obj.url    = this.musicData[i].src;
                   obj.pic    = this.musicData[i].musicImgSrc;
-                  obj.lrc    = this.musicData[i].lrc;
+                  obj.lrc    = "/static/"+this.musicData[i].lrc;
                   this.musicList.push(obj);
           }
           console.log(this.musicList);
