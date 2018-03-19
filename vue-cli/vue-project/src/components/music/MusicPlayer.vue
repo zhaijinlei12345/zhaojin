@@ -14,6 +14,15 @@ export default {
       return {
           musicData: [],
           musicList: [],
+         music   :
+           {
+
+             title: '我们（Cover 杨清柠&王乐乐）',
+             author: '锦零／凤九',
+             url: 'path/to/music.mp3',
+             pic: 'https://p4.music.126.net/4zCLh5OcpB8Hb2woMjSs3Q==/109951162978917893.jpg',
+             lrc: 'path/to/music.lrc'
+           },
           isShow   : false
       }
   },
@@ -37,7 +46,7 @@ export default {
   components:{
       APlayer
   }
-  
+
 }
 </script>
 <style>
