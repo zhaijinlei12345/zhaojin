@@ -1,6 +1,6 @@
 <template>
     <div class='player'>
-        <a-player :music="musicList" :narrow="false" :autoplay="true"
+        <a-player :music="music" :narrow="false" :autoplay="true"
         :mutex="true"  v-if="isShow">
         </a-player>
         <!-- {{$route.params.id}} -->
