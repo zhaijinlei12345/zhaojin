@@ -11,19 +11,20 @@ import  MovieHot from '@/components/movie/MovieHot'
 import  MovieComing from '@/components/movie/MovieComing'
 import  Albums  from '@/components/music/MusicList'
 import  Player  from '@/components/music/MusicPlayer'
+import PhotoDetail from '@/components/photo/PhotoDetail'
 Vue.use(Router)
-  
+
 export default new Router({
   routes: [
     {
       path: '/A',
       component: componentA
-    }, 
+    },
     {
       path: '/',
        redirect:'/movie/top250'
-    }, 
-    
+    },
+
     {
       path:'/movie',
       redirect:'/movie/top250',
@@ -33,8 +34,8 @@ export default new Router({
         {path:'/movie/hot',component:MovieHot},
         {path:'/movie/coming',component:MovieComing}
       ]
-      
-    }, 
+
+    },
     {
       path:'/music',
       redirect:'/music/music_albums',
@@ -51,7 +52,11 @@ export default new Router({
     {
       path:'/photo',
       component:Photo
+    },
+    {
+      path:'/photo/detail/:index',
+      component:PhotoDetail
     }
-     
+
   ]
 })

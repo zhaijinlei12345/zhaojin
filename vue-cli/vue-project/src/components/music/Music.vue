@@ -1,6 +1,6 @@
 <template>
   <div class="music">
-    <common-header title="Music" bgColor="rgb(0, 150, 136)"></common-header>
+    <common-header title="Music" bgColor="rgb(0, 150, 136)" nav="返回"></common-header>
       <router-view></router-view>
     <common-footer FColor="rgb(0, 150, 136)"></common-footer>
    </div>
@@ -22,7 +22,7 @@ export default {
     })
   },
   name: 'Music',
- 
+
   components:{
      CommonHeader,
      CommonFooter
@@ -32,5 +32,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  
+
 </style>

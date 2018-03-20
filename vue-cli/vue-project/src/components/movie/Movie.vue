@@ -1,10 +1,12 @@
 <template>
   <div class="movie">
-    <common-header title="Movie"bgColor="rgb(33, 150, 243)"></common-header>
+    <common-header title="Movie"bgColor="rgb(33, 150, 243)" nav="首页">
+      <button slot="title">首页</button>
+    </common-header>
     <movie-nav></movie-nav>
     <<router-view></router-view>
     <div class="loading" v-show="isShow">
-    <img src="../../../static/img/1.gif" alt="">
+    <img src="../../../static/img/30.gif" alt="">
     </div>
    <common-footer FColor="rgb(33, 150, 243)"></common-footer>
    </div>
@@ -18,15 +20,15 @@ import Axios from 'axios'
 export default {
   name: 'Movie',
   data () {
-   
+
     return {
        movieList:[
-        
+
       ] ,
       isShow :false
-    
+
     }
-     
+
   },
   mounted(){
     let _this  = this;
@@ -34,11 +36,11 @@ export default {
       let scrollTop = document.documentElement.scrollTop;
       let clientHeight =document.documentElement.clientHeight;
       let htmlHeight = document.documentElement.scrollHeight;
-     
+
       if(scrollTop+clientHeight>=htmlHeight){
            _this.isShow=true;
           _this.loaddata();
-        
+
       }
   }
   // http://api.douban.com/v2/movie/top250?count=10&start=10
@@ -49,7 +51,7 @@ export default {
    Axios.get(API_PROXY+"http://m.maoyan.com/movie/list.json?type=hot&offset="+this.movieList.length+"&limit=10")
   .then((res)=>{
     this.movieList = this.movieList.concat(res.data.data.movies);
-       this.isShow=false; 
+       this.isShow=false;
   });
   }
   },
@@ -65,7 +67,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    
+
      .loading{
         /* position: fixed;
         bottom: 1.5rem;
@@ -74,5 +76,5 @@ export default {
         height: 2rem;
         margin-bottom: 1rm;
         /* text-align: center; */
-     }  
+     }
 </style>

@@ -1,8 +1,8 @@
-<template>
+ <template>
        <div>
-         
+
          {{$store.state.count}}
-          {{count}} 
+          {{count}}
           {{count2}}
           <button @click="add(10)">add</button>
           <button @click="reduce">reduce</button>
@@ -15,7 +15,7 @@
 </template>
 
 
-<script> 
+<script>
 import ComB from "./CompoentB"
 import ComC from "./CompoentC"
 import {mapState,mapMutations,mapGetters,mapActions} from 'vuex';
@@ -33,22 +33,22 @@ import {mapState,mapMutations,mapGetters,mapActions} from 'vuex';
         //  count(){
         //      return this.$store.state.count;
         //  }
-        // },  
+        // },
         // computed:mapState({
         //     count:state=>state.count
         // }) ,
-        computed:{ 
-            ...mapState(["count"]), 
+        computed:{
+            ...mapState(["count"]),
             ...mapGetters(["count2"])
             },
-        
+
     components:{
       ComB,
       ComC
      }
     }
 
-  
+
 
 </script>
 

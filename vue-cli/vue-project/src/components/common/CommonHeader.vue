@@ -1,16 +1,25 @@
 <template>
   <div class="header" :style="{background:bgColor}">
-    <button>首页</button>
+      <slot name="title">
+        <button @click="back">{{nav}}</button>
+      </slot>
+
     <h2>{{title}}</h2>
   </div>
 </template>
 
 <script>
 export default {
-  props:['title','bgColor'],
+  props:['title','bgColor','nav'],
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  methods:{
+    back(){
+//      history.go(-1);
+      this.$router.go(-1);
     }
   }
 }
@@ -18,7 +27,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-        
+
        .header{
          height: 1rem;
          display: flex;
@@ -34,7 +43,7 @@ export default {
           color: white;
           background: none;
            border:none;
-          
+
        }
        .header h2{
          text-align: center;
