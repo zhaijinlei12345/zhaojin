@@ -7,10 +7,20 @@
 </head>
 <body>
 <input type="file" id="input">
+<input type="submit" id="sub"> 
 <span id="preview"></span>
 <script src="FileSaver.js"></script>
+<script type="text/javascript" src="jquery-1.11.2.js"></script>
 <script type="text/javascript">
     (function(){
+        $('#sub').on('click',function () {
+         alert(1111);
+
+        });
+   
+
+
+
         var input = document.querySelector('#input');
         input.addEventListener('change', function(e){
             handFile(e.target.files[0]);
@@ -35,6 +45,7 @@
                       }
                 }
                 var str=arr.join("\n");
+                
                 var files = new File([str], "实验数据.txt", {type: "text/plain;charset=utf-8"});
                 saveAs(files);
             };
