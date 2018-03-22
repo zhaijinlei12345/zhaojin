@@ -1,0 +1,18 @@
+body {
+      background:url("../photo/07.jpg");  
+      background-size:100% 100%; 
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+     
+     
+}
+#header{
+       
+     background: rgb(190, 159, 159);
+
+     
+}
+#row .thumbnail{
+    background:  #606669;
+}
