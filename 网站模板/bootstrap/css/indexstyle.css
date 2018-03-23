@@ -7,12 +7,20 @@ body {
      
      
 }
-#header{
-       
-     background: rgb(190, 159, 159);
 
-     
+#header{
+    background-color: rgb(156, 130, 130);
+    /* -moz-opacity:0.5;
+    opacity:0.5; */
 }
-#row .thumbnail{
-    background:  #606669;
+     
+
+.row .thumbnail img{
+   width: 250px;
+   height: 250px;
+
+}    
+#row .col-md-4.column{
+   
+    color: rgb(219, 135, 24);
 }
