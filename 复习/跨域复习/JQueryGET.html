@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+
+
+    <script src="./jquery-1.11.2.js"></script>
+     <script>
+        $.get('http://www.b.com/index4.php?name=zouhao' ,function(data){
+            alert(data);
+        });
+
+     
+     </script>
+
+    <?php
+         header("ACCess-Control-Allow-Origin:http://www.a.com");//允许www.a.com  当www.*.com 为所有都可以访问
+         echo 'haha';
+        ?>
+</body>
+</html>
