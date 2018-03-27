@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--<!DOCTYPE html> 如果不写会默认为混杂模式-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--字符集   <meta charset="UTF-8">-->
+    <meta name="keywords" content="裤子，牛仔裤">
+    <!--搜索关键字-->
+    <meta name="description" content="这是我的网站">
+    <!--网页内容描述-->
+    <title>复习Html</title>
+    <style>
+
+        /**{*/
+            /*!* css reset 比较暴力*/
+       /*可以用：normalize.css  在bootstrap应用的文件*/
+      /**!*/
+            /*margin: 0;*/
+            /*padding: 0;*/
+        /*}*/
+     /*li{*/
+         /*!*设置ul也可以但是，li可以继承*!*/
+         /*list-style: none;*/
+     /*}*/
+        img{
+            /*在IE6中a标签嵌套img 会有蓝色边框，这样设置就可以解决这个问题*/
+            border: 0;
+        }
+        a{
+            text-decoration: none;
+            /*none也是默认值*/
+        }
+    </style>
+</head>
+<body>
+  <div></div>
+ <p>上下自带16px的外边距</p>
+ <ul>
+     <li>1</li>
+     <li>2</ li>
+     <li>3</li>
+     <li>4</li>
+     <li>5</li>
+ </ul>
+  <a href=""><img src="" alt="" title="鼠标放入有提示框"></a>
+  <span>文字</span>
+  <textarea name="" id="" cols="30" rows="10"></textarea>
+  <button>click</button>
+  <table>
+      <tr>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+      </tr>
+  </table>
+  <form action="">
+      <label for="username">用于二</label>
+      <input type="text" id="username" name="username">
+      <!--name为后台接收名字-->
+       <label>用户：<input type="text"></label>
+        <!--两者作用相同-->
+      <button type="button">click</button>
+      <!--botton在form表单中默认是提交的,为了阻止button提交,可以设置type="button"-->
+  </form>
+   <!--
+      行级元素：span a img  input  textarea
+      行级元素不能设置宽高为内容撑开的  在同一行，
+
+      块级元素：p div  ul ol li h1~h6  table
+      块级元素 单独一行， 不设置宽度的情况下，宽度充满父元素，不设置高度时为内容的高度
+
+      互相转换可以用：1.display ：block  inline  inline-block
+                    2.脱离文档流可以设置宽高，脱离方法 浮动 设置定位
+          display属性 display：none 弹性盒模型
+          语义化标签： 便于收搜引擎的优化，便于开发者阅读
+   -->
+</body>
+</html>
