@@ -8,14 +8,18 @@
     <style>
     .aa{
         background: red;
+       
     }
     .bb{
         background: orange;
+        width: 100px;
+        height: 100px;
     }
     
     </style>
 </head>
 <body>
+    <!-- aa bb 表中出现相同属性，该属性会被后者替换，不同属性则依然执行 -->
     <!-- 这个有定义（style中先后有关系）有关系，与class先后无关系， -->
      <div class="aa bb">div</div>
 </body>

@@ -5,8 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+    #div1{
+        width: 400px;
+        height: 400px;
+        background: red;
+        overflow: hidden;
+        /* padding-top: 50px;
+        box-sizing: border-box; Css3的属性 */
+    }
+    #div2{
+        width: 100px;
+        height: 100px;
+        background: rgb(72, 255, 0);
+        margin-top: 200px
+    }
+    
+    </style>
 </head>
 <body>
+
+   <div id="div1">
+        <div id="div2"></div>
+   </div>
+  
     <!--
     css选择器：
        1.ID选择器 #id{}
@@ -29,6 +51,22 @@
                          h1 ~ p  选择紧接在 h1 元素后出现的所有p元素
        12.css3选择器;
 
+        -->
+
+        <!-- 盒模型
+         一， 两种盒模型 :
+          标准盒模型:width:为内容宽度
+          怪异盒模型:width:内容宽度+border+padding（内边距）
+        二, 外边框合并问题:
+        兄弟元素:哥哥设置  margin-bottom: 200px
+                弟弟设置  margin-top: 100px
+                 他们之间的距离为 200px;取大值;
+        父子关系:
+           当子元素设置 margin-top ，父元素也会掉落，
+           给父元素设置  overflow: hidden;解决该问题;
+
+        padding:内容和边距之间的距离
+         margin:元素之间的距离;
         -->
 </body>
 </html>
