@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    body{
+        width: 2000px;
+        height: 2000px;
+    }
+    </style>
+</head>
+<body>
+
+   <div id="div1">ii</div>
+  
+
+    <script>
+         var oDiv1=document.getElementById("div1");
+         oDiv1.onclick=function(e){//e就是事件对象
+           var  target=e.target||window.event.srcElement;
+           console.log(target);
+         };
+        // var a;
+        // var oDiv = document.getElementById("div1");
+        // console.log(a);//undefined
+        // console.log(oDiv);//null
+        // aa();
+        // function aa(){
+        //     alert("aa");
+        // }
+        // aa(); 
+        //  var bb=function(){
+        //      alert(123);
+        //  }  
+        //  bb();
+       
+         //js 选择器 
+ 
+         document.getElementById("id") //id
+         document.getElementsByClassName("AA")//class 有兼容性问题
+         document.getElementsByName("username")// 有兼容性问题
+         document.getElementsByTagName("div")//标签 是节点列表 不是真正的数组; 
+         document.querySelector("#id");//获取一个元素 H5语法有兼容性问题
+         document.querySelectorAll(".aa");//获取一堆元素;   H5语法 有兼容性问题
+         
+         var oDiv= document.createElement("div");//创建元素; 
+         document.body.appendChild(oDiv);
+         oDiv.innerHTML="ashdjka";
+        //   window.onresize=function(){
+        //       console.log("bianle")
+        //   }
+
+         window.onscroll=function(){
+             var oScroll=document.body.scrollTop||document.documentElement.scrollTop
+             console.log(oScroll);
+         }
+
+
+
+
+    </script>
+</body>
+</html>
