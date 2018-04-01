@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="require.js" data-main="index.js"></script>
+    <script>
+        define(["a"],function(obj){
+       });
+
+       /*a.js*/
+       require(["jquery"],function($){
+           return obj;
+       }); 
+       /*
+       define(function(require){
+        一些操作后；
+
+        var obj = require("a");
+
+
+       })
+       
+       
+       */
+       /**
+        
+        AMD:require.js提出;异步的模块定义;依赖前置;
+        CMD:sea.js提出；通用的模块定义;依赖就近;
+       */
+    </script>
+    
+</body>
+</html>
