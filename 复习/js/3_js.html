@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">aa</button>
+    <ul id="tab">
+        <li>001</li>
+        <li>002</li>
+        <li>003</li>
+        <li>004</li>
+        <li>005</li>
+    </ul> 
+    <script>
+     var oUl=document.getElementById("tab");
+      var ali=oUl.getElementsByTagName("li");
+       for(var i=0;i<ali.length;i++){
+
+        //闭包
+        //    (function(a){//为索引值
+        //          ali[a].onclick=function(){
+        //              console.log(i);
+        //          }
+        //    })(i)//i为传入参数
+       
+       
+        //事件代理
+         oUl.onclick=function (e) { 
+             var target = e.target||window.event.srcElement
+             console.log(target.innerHTML);
+          }
+         
+           
+        
+        }
+         
+        var oBtn=document.getElementById("btn");
+        oBtn.onclick=function(){
+            var tags= document.createElement("li");
+            tags.innerHTML=Math.random();
+            oUl.appendChild(tags);
+        }
+      
+    </script>
+</body>
+</html>

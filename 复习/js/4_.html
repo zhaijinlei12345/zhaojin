@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style> 
+        #div1{
+         width:200px;
+         height:200px;
+         background:yellow;
+
+        }
+    
+    
+    </style>
+</head>
+<body>
+    <div id="div1">
+        aa
+    </div> 
+
+<script>
+  var oDiv=document.getElementById("div1");
+  alert(getComputedStyle(oDiv,null).width);
+     alert(oDiv.currentStyle.width)  ;  
+    oDiv.onclick=function(){
+        oDiv.style.width="400px";
+        oDiv.style.height="400px";
+        oDiv.style.background="#000";
+    }
+    // offsetWidth;//该宽度包括内容宽+border+内边距padding
+    // offsetHeight;//同上
+    // offsetLeft;//离他最近的已经定位的祖先元素的水平距离
+    // offsetTop;//同上垂直距离
+    // offsetParent; //离他最近的祖先元素
+    //  jp：width()(内容的), innerWidth(内容+padding), outerWidth(ture)(默认为：内容+padding+border),如果设置成ture，内容+padding+border+magin;
+</script>
+
+</body>
+</html>
