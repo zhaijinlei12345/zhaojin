@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+     #div1::after{
+         content: "after";
+         background: turquoise;
+         /* 插入在内容的后面 为行级元素，before同理 */
+     } 
+       #div1{
+           /* text-shadow: 10px 10px 3px yellow;
+           width: 100px;
+           border: 1px solid #000;
+           overflow: hidden;
+           text-overflow: ellipsis;
+           box-shadow: 10px 10px 3px 10px yellow; */
+       }
+       #div2{
+           width: 400px;
+           height: 500px;
+           background: greenyellow;
+           background: url(./1.jpg) no-repeat ;
+           border:20px solid rgba(10,52,100, 0.5) ;
+           /* background-origin: border-box;
+           background-clip:content-box; */
+           /* background-size: cover; */
+            background-size: contain; 
+     }
+    </style>
+</head>
+<body>
+    <div id="div1">K12138aksdajkahjakshhshshshsh</div>
+    <div id="div2"></div>
+</body>
+</html>
