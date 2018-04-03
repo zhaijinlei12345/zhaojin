@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--怎么在网页中动态生成script标签-->
+ <button id="add">add</button>
+<script>
+    var oBtn =  document.getElementById("add");
+    oBtn.onclick=function () {
+       var oScript = document.createElement("script");
+       oScript.src="xx.js";
+       document.head.appendChild(oScript);
+    };
+</script>
+</body>
+</html>
