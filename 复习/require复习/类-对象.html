@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //类
+    function  People(name,age) {
+        this.name=name;
+        this.age=age;
+
+    }
+    People.prototype.code =function () {
+        alert("coding...");
+    };
+    //对象
+    var p1 =new  People("zhangsan",18);
+    p1.code();
+    
+</script>
+</body>
+</html>

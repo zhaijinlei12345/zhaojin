@@ -12,7 +12,7 @@ require(["jquery","dialog"],function($,dialog){
            height:300,
            title:"弹出层",
            content:"login.html"
-       }
+       };
       dialog.open(settings);
   });
-})
+});

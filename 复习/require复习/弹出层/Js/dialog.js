@@ -27,12 +27,23 @@ define(["jquery"], function($) {
             +'</div>';
 
             $(document.body).append(html);
+
+
             $(".dialog-box").css({
                  width:defaulstSettings.width, 
                  height:defaulstSettings.height
             });
-           
-                $(".dialog-content").load(defaulstSettings.content);
+                 if(defaulstSettings.content.indexOf(".html")!=-1){
+                     $(".dialog-content").load(defaulstSettings.content);
+                 }else {
+                     $(".dialog-content").html(defaulstSettings.content);
+                 }
+                 $(".title-close").on("click",function () {
+
+                       $(this).parents(".dialog-container").hide("slow",function () {
+                           $(this).parents(".dialog-container").remove();
+                       })
+                 })
           
            
            }
