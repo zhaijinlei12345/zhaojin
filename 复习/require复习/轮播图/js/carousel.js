@@ -46,6 +46,7 @@ define(["jquery"],function ($) {
               //e.target指向事件源
                 this.nowIndex=$(e.target).index();
                 changeImg.call(this);
+
          }.bind(this));
            this.$left.on("click",function () {
                this.nowIndex--;
