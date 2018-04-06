@@ -16,6 +16,5 @@ require(["jquery","dialog"],function($,Dialog){
        var dialog= new Dialog(settings);
        dialog.open();
 
-     // dialog.open(settings);
   });
 });
