@@ -1,0 +1,60 @@
+body, p, div, h1, h2, h3, h4, h5, h6, table, tbody, tr, td, span, blockquote, a, abbr, address, cite, code, img, ul, ol, li, dl, dd, dt, form, label, fieldset, caption, input, textarea, button {
+	border:0;
+	/* outline:0; */
+	font-family:Arial, Helvetica, Sans-Serif;
+	color:#fff;
+	vertical-align:baseline;
+	list-style:none;
+	text-decoration:none;
+	line-height:1.5em;
+	margin:0;
+	padding:0;
+}
+body{
+    background: #195f88;
+     font-size: 14px;
+}
+#warp{
+    width: 980px;
+    position: relative;
+    margin: 0 auto!important;
+}
+#side{
+    
+    width: 220px;
+    height: 100%;
+    float: left;
+    background: #2c2c2c;
+    border-right: 1px solid #2e2f2f;
+    position: fixed;
+}
+#blog img{
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    padding: 15px 0 9px 0;
+}
+#container{
+    width: 730px;
+    float: right;
+    padding-right: 25px;
+    left: -5px;
+    position: relative;
+    padding-top: 0;
+    background: #619ec2;
+}
+#nav li{
+    margin-left: 10px;
+    text-decoration: none;
+    font-family: 'OstrichSansBlack', Arial, sans-serif;
+    margin-bottom: 1px;
+    width: auto;
+    font-size: 20px;
+    text-align: left;
+    padding-left: 10px !important;
+    display: block;
+    /* transition: all 200ms; */
+    -webkit-transition: all 200ms;
+    padding: 5px 10px 5px 0;
+    cursor: pointer;
+}

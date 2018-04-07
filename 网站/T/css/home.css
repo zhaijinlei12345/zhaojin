@@ -1,0 +1,33 @@
+#Home{
+   padding: 25px;
+}
+small {
+    font-size: smaller;
+}
+.half{
+    float: left;
+    width: 50%;
+    margin-top: 20px;
+}
+.left{
+    float: left;
+}
+small{
+    font-size: smaller;
+}
+.column_content{
+    padding-right: 15px;
+}
+.column_content p{
+    padding-left: 68px;
+}
+.column_content img{
+    margin-top:10px;
+    margin-right: 10px;
+}
+.column_content h4{
+    font-family: 'OstrichSansBlack';
+    color: #0d4667;
+    text-shadow: 1px 1px 0px #84bbdb;
+    font-size: 28px;
+}

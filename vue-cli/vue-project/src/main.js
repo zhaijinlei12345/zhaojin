@@ -6,7 +6,7 @@ import router from './router'
 import store  from './vuex/store'
 import VueTouch from 'vue-touch'
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 require("./assets/js/rem.js");
 require("./assets/css/reset.css");
 global.API_PROXY = 'http://bird.ioliu.cn/v1/?url='
