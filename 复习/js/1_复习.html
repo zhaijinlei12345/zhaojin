@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 值类型：（number string 布尔型）
+        //每一个变量存入的空间位置不同，所以不会相互影响；
+     var a=100;
+     var b=a;
+         a=200;
+     console.log(b);    //100
+        //  引用类型  （对象，数组，函数）
+        // a,b是不同空间，但是他们的指针指向了同一的地方，也就是说
+        //a,b 独立，age是共有的；
+        //原因，为了减少内存的消耗；
+      var a={age:20}
+      var b=a;
+      b.age=21;
+      console.log(a.age);//21
+
+//************** typeof 运算符能判断出六种类型 undefined string number Boolean object function
+   //******typeof能区分值类型  引用类型只能区分函数类型*******；
+     typeof undefined //undefined
+      typeof 'abc'  //string
+      typeof 123    //number
+      typeof true   //boolean
+      typeof {}    //object//引用类型
+      typeof []    //object//引用类型
+      typeof null  //object
+      typeof console.log//function//引用类型（函数）
+  
+      /********* 变量计算 ***********/
+      //  强制类型转换
+      // 字符串拼接:
+      var a =100+10;//110;
+      var b= 100+'10';//'10010'字符串
+      // ==运算符(它会试图将==左右相等)
+      100=='100'//true
+        0==''//true（因为0和''都可以转换成false，所以将其判断相等）
+     null==undefined//true（同上）
+      //以上换成===就不会出现该问题；
+
+      //***if语句
+      var a =true;
+      if(a){
+          //会执行
+      }
+      var b =100;
+      if(b){
+          //会执行，将100转化为true
+      }
+      var c = ''//false
+      if(c){
+          //不会执行
+      }
+  
+       console.log(10&&0)//0  (10转化为 ture）
+       console.log(''||'abc')//'abc' 
+       console.log(!window.abc) //true
+       //判断一个变量会被当作true还是false
+       var a = 100;
+       Console.log(!!a);//先取反变成Boolean 再取反变成当前Boolean型
+    </script>
+</body>
+</html>
