@@ -28,6 +28,9 @@ body{
     border-right: 1px solid #2e2f2f;
     position: fixed;
 }
+#blog{
+    border-bottom: 1px solid #353535;
+}
 #blog img{
     text-align: center;
     margin: 0 auto;
@@ -43,11 +46,15 @@ body{
     padding-top: 0;
     background: #619ec2;
 }
+#nav{
+    margin-top: 25px;
+}
 #nav li{
     margin-left: 10px;
     text-decoration: none;
     font-family: 'OstrichSansBlack', Arial, sans-serif;
     margin-bottom: 1px;
+    font-weight: bold;
     width: auto;
     font-size: 20px;
     text-align: left;

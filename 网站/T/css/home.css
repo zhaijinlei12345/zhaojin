@@ -1,8 +1,14 @@
 #Home{
-   padding: 25px;
+    padding: 25px 0 40px 25px;
 }
 small {
     font-size: smaller;
+}
+.first{
+    clear: left;
+}
+.last{
+    clear: right;
 }
 .half{
     float: left;
