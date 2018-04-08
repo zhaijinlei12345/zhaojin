@@ -160,10 +160,23 @@
          <div id="Te">
              <h3 class="page_title">Tel</h3>
              <div id="Te_container">
+                 <fieldset id="msg">
+                     <form action="" method="post">
+                         <input type="text" id="Name" name="name" value="Full Name*" onfocus="if(this.value == 'Full Name*') this.value = ''" onblur="if(this.value == '') this.value = 'Full Name*'">
+                         <input type="text" id="Email" name="Email" value="Full Email*" onfocus="if(this.value == 'Full Email*') this.value = ''" onblur="if(this.value == '') this.value = 'Full Email*'">
+                         <input type="text" id="Addres" name="Email" value="Full Addres*" onfocus="if(this.value == 'Full Addres*') this.value = ''" onblur="if(this.value == '') this.value = 'Full Addres*'">
+                         <textarea id="messg" name="message" onfocus="if(this.value == 'Your Message*') this.value = ''" onblur="if(this.value == '') this.value = 'Your Message*'">Your Message*</textarea>
+                         <button id="submit" class="button"> Send Message</button>
+                     </form>
+                 </fieldset>
              </div>
+         </div>
+         <div id="footer">
+             <p>DATE-01-01-17</p>
+             <p>2015-8-25-zjl（1152005456@qq.com）</p>
          </div>
      </div>
     </div>
-   
+     <a class="gotop" href="">Top</a>
 </body>
 </html>
