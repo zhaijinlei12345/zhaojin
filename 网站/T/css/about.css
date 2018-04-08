@@ -2,13 +2,24 @@
     margin-bottom: 0;
       padding-top: 20px;
 }
-#container h3.page_title {
+
+#about_container{
+    padding: 25px 0 40px 25px;
+}
+#about_container h4{
     font-family: 'OstrichSansBlack';
-    margin-left: 25px;
-    font-size: 35px;
-    color: #fff;
-    border-bottom: 1px solid #fff;
-    text-shadow: 1px 1px 2px #185477;
-    line-height: 2;
-    padding: 5px 0 0px 0px;
+    color: #0D4667;
+    text-shadow: 1px 1px 0px #84BBDB;
+    font-size: 28px;
+    margin-top: 20px;
+}
+blockquote{
+    border-left: 5px solid #7cb3d3;
+    font-style: italic;
+    padding: 10px;
+    margin: 20px;
+}
+
+b {
+    font-weight: bold;
 }
