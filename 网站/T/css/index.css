@@ -68,7 +68,6 @@ body{
     margin-top: 25px;
 }
 #nav li{
-    margin-left: 10px;
     text-decoration: none;
     font-family: 'OstrichSansBlack', Arial, sans-serif;
     margin-bottom: 1px;
@@ -76,12 +75,17 @@ body{
     width: auto;
     font-size: 20px;
     text-align: left;
-    padding-left: 10px !important;
+    padding-left: 20px !important;
     display: block;
      transition: all 200ms;
     -webkit-transition: all 200ms;
     padding: 5px 10px 5px 0;
     cursor: pointer;
+}
+#Home_img{
+    padding: 1px;
+    background: black;
+
 }
 #Home{
     padding: 25px 0 40px 25px;

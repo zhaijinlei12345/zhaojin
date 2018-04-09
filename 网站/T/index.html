@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/action.css">
      <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/about.css">
+    <link rel="stylesheet" href="./css/carousel.css">
     <title>我的网站</title>
 </head>
 <body>
@@ -15,7 +17,7 @@
             <img src="./images/logo.png" alt="">
         </div>
         <div id="nav">
-            <ul>
+            <ul id="navul">
             <li>主页</li>
             <li>关于我</li>
             <li>技能度</li>
@@ -27,7 +29,6 @@
      <div id="container">
          <div id="Home">
              <div id="Home_img">
-                 <img src="./images/05.jpg" alt="">
              </div>
              <div id="Home_container">
                  <div class="half first">
@@ -179,5 +180,21 @@
      </div>
     </div>
      <a class="gotop" href="">Top</a>
+
+<script src="js/require.js" data-main="./js/index"></script>
+<script src="js/jquery-1.11.2.js"></script>
+<script src="js/indexContatiner.js"></script>
+<script>
+//    (function () {
+//        $("#navul li").on("click",function(){
+//            $(this).addClass("selected").siblings().removeClass("selected");
+//        })
+//
+//
+//    })()
+
+
+
+</script>
 </body>
 </html>
