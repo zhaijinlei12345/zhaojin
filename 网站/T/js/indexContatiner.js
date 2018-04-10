@@ -3,6 +3,8 @@
         $(this).addClass("selected").siblings().removeClass("selected");
     });
 
+
+
     $(".gotop").on("click", function(){
         var target;
         if(document.documentElement.scrollTop){//$("html).scrollTop()

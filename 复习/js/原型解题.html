@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    //var arr=new Array();
+//    var arr=[];
+//    arr instanceOf Array//ture
+//    typeof arr//Object;
+//    // typeof无法判断是否是数组
+
+//    var Fn= new Function();
+ 
+    function Animal() {
+    this.eat=function () {
+        console.log("eat");
+    }
+}
+function Dog() {
+    this.dark=function () {
+        console.log("dark");
+    }
+}
+function cat() {
+    this.miao=function () {
+        console.log("miao");
+    }
+}
+cat.prototype=new Animal();
+Dog.prototype=new cat();
+
+var erha= new Dog();
+erha.kua=function () {
+    console.log("I am king");
+};
+erha.kua();
+erha.dark();
+erha.eat();
+
+
+
+
+function  Foo(name,age) {
+     this.name=name;
+     this.age=age;
+     //    return this
+}
+var fn = new Foo("zhaangsan",18);
+    console.log(fn.name);
+
+</script>
+</body>
+</html>
