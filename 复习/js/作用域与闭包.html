@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    *全局
+    * 函数声明
+    * 在代码执行时将声明的函数，变量 提到前面
+    */
+    fn("zhang");//不会报错
+    function fn(name) {
+        /*
+        * 局部
+        */
+        console.log(this);
+        console.log(arguments);
+        bar(100);
+        age=100;
+        console.log(name,age);
+        var age;
+        function bar(num) {
+            console.log(num);
+
+
+        }
+    }
+
+   /*
+    fn1();//报错
+    var fn1= function () {
+        //函数表达式
+    }
+   */
+
+    /*fn1()这种情况就像，
+    var a=100；
+    a=undefined
+    这里 var a 会提到顶部，不会执行a=100;
+    fn1=undefined 同理，所以fn1()报错
+     */
+
+
+
+
+</script>
+</body>
+</html>
