@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    var a={
+    name:'A',
+    fn:function () {
+        console.log(this);
+    }
+};
+a.fn();//fn执行了
+a.fn;//fn没执行
+a.fn.call({name:'B'});//fn执行了
+var foo=a.fn;//fn没执行
+foo();//fn执行了
+*/
+
+    /********this指向问题*********/
+    function Foo(name) {
+
+        this.name=name;
+    }
+    var f =new Foo('zhangsan');
+    console.log(f.name);
+    var a={
+        name:'A',
+        fn:function () {
+            console.log(this.name);
+        }
+    };
+     a.fn();
+     var mmt=function () {
+        console.log(this)
+    }.bind({x:200});
+    mmt();
+    function mm() {
+        console.log(this);
+    };
+    mm.call({y:200},)
+</script>
+</body>
+</html>

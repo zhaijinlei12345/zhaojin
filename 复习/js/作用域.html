@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    //无块级作用域
+    if(true){
+        var name='zhangsna'
+        //该块无作用
+    }
+    console.log(name);//依然执行
+    //函数作用域和全局作用域
+    //全局作用， 变量容易污染
+    var a=100;
+    function fn() {
+        //函数作用域，里面的变量，不会被外污染
+        var a=20;
+        console.log('fn',a)
+    }
+    console.log('global',a);
+fn();
+*/
+
+
+//*******作用域链************：
+    var a=100;
+    function en() {
+      //当前作用域没有定义的变量，即'自由变量'
+        // a(自由变量)没有定义，就去父级作用域去找，（一层层找）
+        var b=300;
+        function fn() {
+            var c=100;
+            console.log(b);//a(自由变量)没有定义，就去父级作用域去找，（一层层找）
+            console.log(c);
+            console.log(a);// a(自由变量)没有定义->就去父级作用域去找->父级的父级（一层层找）
+        }
+        fn();
+    }
+    en()
+</script>
+</body>
+</html>
