@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="btn">div</div>
+<script>
+    /**********异步************/
+/*console.log(100);
+
+setTimeout(function () {
+    console.log(200);
+
+},5000);
+
+console.log(300);*/
+/*console.log(100);
+setInterval(function () {
+    console.log(200);
+},2000);
+    console.log(300);*/
+
+/* 图片加载（异步）
+console.log('start');
+var img=document.createElement("img");
+img.onload=function () {
+    console.log('onload');
+};
+img.src='./1.jpg';
+console.log('end');*/
+/*ajax请求
+    console.log('start');
+    $.get("./package.json",function (data) {
+        console.log(data);
+    });
+    console.log('end');
+*/
+/*事件绑定
+ console.log('start');
+var obtn=document.getElementById("btn");
+   obtn.addEventListener("click",function () {
+       console.log("cilck");
+   });
+
+    console.log('end');
+*/
+console.log(1);
+setTimeout(function () {
+    console.log(2)
+},2000);
+console.log(3);
+setTimeout(function () {
+    console.log(4);
+},1000);
+console.log(6);
+
+/********同步********/
+/*console.log(100);
+alert(200);
+console.log(300);*/
+
+
+
+</script>
+</body>
+</html>
