@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    x = sumAll(1, 123, 500, 115, 44, 88);
+
+    function sumAll() {
+        var sum=0;
+        for(var i=0;i<arguments.length;i++){
+            sum+=arguments[i];
+        }
+        return sum;
+    }
+    console.log(x);
+
+</script>
+</body>
+</html>
