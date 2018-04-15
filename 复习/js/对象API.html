@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr=[1,2,3,4,5,6,9];
+    var obj={
+        x:100,
+        y:200,
+        z:300
+    };
+
+    var key;
+    for(key in obj){
+        //注意这里的hasOwnProperty，原型链中提到过
+        //Javascript中Object对象原型上的hasOwnProperty()用来判断一个属性是定义在对象本身而不是继承自原型链。
+        if(obj.hasOwnProperty(key)){
+            console.log(key,obj[key])
+        }
+
+    }
+    function forEach(objs,fn) {
+        var key;
+         if(objs instanceof Array){
+             objs.forEach(function (item,index) {
+                 fn(index,item);
+             })
+         }else {
+             for(key in objs){
+                 fn(key,objs[key]);
+             }
+
+         }
+    }
+      forEach(obj,function (key,value) {
+          console.log(key,value)
+      });
+    forEach(arr,function (index,item) {
+        console.log(index,item)
+    });
+
+
+
+
+
+</script>
+
+</body>
+</html>

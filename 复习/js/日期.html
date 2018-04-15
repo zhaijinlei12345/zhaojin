@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    Date.now();
+    var dt=new Date();
+    dt.getFullYear();
+    console.log(dt.getMonth()+1);
+    dt.getMonth();//(0-11)
+    console.log(dt.getDate());
+    dt.getDate();
+    dt.getHours();
+    dt.getMinutes();
+    dt.getSeconds();
+    dt.getTime();//毫秒
+function DATE(dt) {
+        if(!dt){
+            dt =new Date()
+        }
+        var year=dt.getFullYear();
+        var month=dt.getMonth()+1;
+        var day=dt.getDate();
+        if(month<10){
+            month='0'+month;
+
+        }
+        if(day<10){
+            day='0'+day;
+
+        }
+        return  year+'-'+month+'-'+day;
+
+    }
+    var date=DATE();
+    console.log(date);
+
+
+
+</script>
+</body>
+</html>
