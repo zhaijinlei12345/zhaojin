@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1">div1</div>
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<div>4</div>
+
+<script>
+    var div1=document.getElementById("div1");//元素
+     div1.className='div1';
+     div1.style.color='red';
+    var divList = document.getElementsByTagName('div');//集合
+    var div3 = document.getElementsByTagName('div')[3];
+    //prototype
+    console.log(div1.innerHTML);
+    console.log(divList.length);
+    console.log(div1.nodeType);
+    console.log(div3.innerHTML);
+    //nodeType ——节点类型值
+    // 1:元素节点 ;
+    // 2.属性节点;
+    // 3:文本节点（空白为文本节点 ）
+    console.log(div1.nodeName);
+    //Attribute
+    div1.getAttribute('data-name');
+    div1.setAttribute('data-name','imooc');//设置值
+    div1.setAttribute('style','font-size:20px');
+
+
+ 
+</script>
+</body>
+</html>
