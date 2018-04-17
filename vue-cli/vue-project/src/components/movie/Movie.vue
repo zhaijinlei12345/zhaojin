@@ -22,9 +22,7 @@ export default {
   data () {
 
     return {
-       movieList:[
-
-      ] ,
+       movieList:[] ,
       isShow :false
 
     }
@@ -78,3 +76,4 @@ export default {
         /* text-align: center; */
      }
 </style>
+e

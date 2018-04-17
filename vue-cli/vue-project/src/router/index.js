@@ -30,9 +30,9 @@ export default new Router({
       redirect:'/movie/top250',
       component: Movie,
       children:[
-        {path:'/movie/top250',component:MovieTop250},
         {path:'/movie/hot',component:MovieHot},
-        {path:'/movie/coming',component:MovieComing}
+        {path:'/movie/coming',component:MovieComing},
+        {path:'/movie/top250',component:MovieTop250},
       ]
 
     },

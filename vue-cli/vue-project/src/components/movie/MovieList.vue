@@ -7,7 +7,6 @@
       <span>{{title}}</span>
       <p>
         <span>
-          
         </span>
          {{desc}}
         {{year}} (平均{{avg}}分)
@@ -23,38 +22,38 @@ export default {
   data () {
     return {
     }
-    
+
   }
- 
+
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped> 
+<style scoped>
      .top250{
-     
+
        padding: 0.4rem;
       margin: 0.4rem 0;
-      
-       
+
+
      }
      .movie-title{
-       float: left; 
-       margin-left:0.6rem; 
+       float: left;
+       margin-left:0.6rem;
        margin-top: 0.2rem;
        width: 4.0rem;
        border-bottom: 1px #ccc solid;
 
-      
-     }  
+
+     }
    .movie-img{
        float: left;
        height: 1rem;
        width: 0.8rem;
-     }  
+     }
       .movie-img img{
         width: 100%;
         height: 100%;
       }
-     
+
 </style>
