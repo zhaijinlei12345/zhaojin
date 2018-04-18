@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+//    eval("console.log('s2')");//弹出字符s2,
+     var s2=0;
+    function Timer() {
+        this.s1 = 0;
+        this.s2 = 0;
+        //  箭头函数
+        setInterval(() => this.s1++, 1000);//this->Timer
+        //  普通函数
+        setInterval(function () {
+            this.s2++;//加的是全局的，这个this->window
+        }, 1000);
+    }
+    var timer = new Timer();
+    setTimeout(() => console.log('s1: ', timer.s1), 3100);//3 作用域 Timer
+    setTimeout(() => console.log('s2: ',timer.s2), 3100);//0 作用域  全局
+    setTimeout(() => console.log('s2: ',s2), 3100);//3
+
+
+
+
+</script>
+</body>
+</html>

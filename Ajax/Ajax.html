@@ -6,9 +6,11 @@
 </head>
 <body>
 <button id="st">获取</button>
+<div id="div1"></div>
 </body>
 <script>
   var oBot = document.getElementById('st');
+  var odiv = document.getElementById('div1');
     oBot.onclick =function () {
         var xmlHttp;
         if(window.XMLHttpRequest){
@@ -22,6 +24,7 @@
         //服务器回调
         xmlHttp.onreadystatechange=function(){
             if(xmlHttp.readyState==4 && xmlHttp.status==200){
+                odiv.innerHTML=xmlHttp.responseText;
                 console.log(xmlHttp.responseText);
             }
         };
