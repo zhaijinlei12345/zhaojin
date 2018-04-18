@@ -5,7 +5,7 @@
        :year="obj.snum" :avg="obj.sc" :img="obj.img" :desc="obj.cat"
       ></movie-list>
     </div>
-    
+
 </template>
 
 
@@ -15,24 +15,26 @@ import MovieList from "./MovieList"
 import Axios from 'axios'
 export default {
   data () {
-   
-    return { 
+
+    return {
        movieList:[] ,
-    
+
     }
-     
+
   },
   mounted(){
     let _this  = this;
     window.onscroll =function(){
+
+
       let scrollTop = document.documentElement.scrollTop;
       let clientHeight =document.documentElement.clientHeight;
       let htmlHeight = document.documentElement.scrollHeight;
-     
+
       if(scrollTop+clientHeight>=htmlHeight){
            _this.isShow=true;
           _this.loaddata();
-        
+
       }
   }
   // http://api.douban.com/v2/movie/top250?count=10&start=10
@@ -43,7 +45,7 @@ export default {
    Axios.get(API_PROXY+"http://m.maoyan.com/movie/list.json?type=hot&offset="+this.movieList.length+"&limit=10")
   .then((res)=>{
     this.movieList = this.movieList.concat(res.data.data.movies);
-       this.isShow=false; 
+       this.isShow=false;
   });
   }
   },
@@ -55,8 +57,7 @@ export default {
 </script>
   <style>
     .list{
-      margin: 1.4rem 0 1.7rem; 
-     } 
+      margin: 1.4rem 0 1.7rem;
+     }
 
   </style>
-  

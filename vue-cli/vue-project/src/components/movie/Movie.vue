@@ -72,7 +72,7 @@ export default {
         width: 1rem; */
         width: 2rem;
         height: 2rem;
-        margin-bottom: 1rm;
+        margin-bottom: 1rem;
         /* text-align: center; */
      }
 </style>
