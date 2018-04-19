@@ -1,0 +1,8 @@
+<!--pages/help/help.wxml-->
+<view id='mapid'>
+<map  id="map" longitude="126.60908773999347" latitude="45.70580340011065"show-location
+circles="{{circles}}"bindcontroltap="controltap" bindmarkertap="markertap"   bindregionchange="regionchange" >  
+</map>
+</view>
+
+
