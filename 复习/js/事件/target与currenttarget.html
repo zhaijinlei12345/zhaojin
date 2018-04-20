@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">div1</div>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+<div id="double">双击0</div>
+<div id="select">双击1</div>
+<script>
+    var oul=document.querySelector("ul");
+   oul.onclick=function (e) {
+       var tar=e.target;//事件源//可改变
+       var cruutar=e.currentTarget;//绑定事件元素;固定不变
+       console.log(tar);
+       console.log(cruutar);
+       event.preventDefault();
+   };
+   var oDiv1=document.getElementById("div1");
+   oDiv1.onclick=function (e) {
+       e=e||window.event;
+       console.log(e.offsetX);
+       console.log(e.offsetY);
+   };
+   var Dob=document.getElementById("double");
+    Dob.ondblclick=function (e) {
+        e.preventDefault();
+       console.log("无法阻止选中");
+    };
+    var Oselect=document.getElementById("select");
+    Oselect.onselectstart=function (e) {
+        e.preventDefault();
+        console.log("阻止成功");
+    }
+
+</script>
+</body>
+</html>
