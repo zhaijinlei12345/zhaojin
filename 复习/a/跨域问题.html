@@ -1,0 +1,81 @@
+跨域同源策略:协议，域名，端口号保持一致;(不允许不同源之间进行传输)
+
+跨域情况:
+http://www.a.com   http://wwww.b.com //域名不同
+http://www.qq.com  http://new.qq.com//主域与子域不同
+http://www.a.com:8080  http://www.a.com:8081//端口号不同
+http://www.a.com   https://www.a.com//协议不同  
+
+
+get方式：src="http://www.b.com/index1.php?age=10"
+
+
+跨域方式:（scr属性是没有跨域问题的）
+1.jsonp:json padding; 
+  格式：<script src="http://www.b/com/index.php?age=10"></script>
+  需求：当在a域中引入b域中的文件；
+  原理：利用script中的src属性实现跨域，
+   利用get方式传值  如 ?age=10
+    传入多值的用&链接
+方式：get；
+
+
+2.iframe：(1.使DOM结构变得复杂，2.不利于（SEO）搜索引擎的优化 3.类似一个封闭的空间，传值麻烦)
+  格式:  <iframe src="http://www.b.com/index2.php?name=list"></iframe>
+  原理：利用iframe中的src属性实现跨域，
+  方式：get；
+   
+3.服务器代理: eg:'http://bird.ioliu.cn/v1/?url='
+  情景：当需要引用接口，如猫眼接口:
+  代理服务配合接口
+
+4.postmessage   ---post
+
+格式:配合iframe使用，发送方：posMessage（data,url）   接收文件用onMessaga(e)
+  发送：
+  <iframe  id="ifr"  src="http://www.b.com/index3.html?name=list"></iframe>
+       <script>
+            
+        window.onload=function () {
+            var ifr = document.getElementById('ifr');
+            var win = ifr.contentWindow;
+            win.posMessage("hello",'http://www.b.com/index3.html');
+        }
+
+       </script>
+
+  接收：
+    window.onmessage=function (e) {
+            alert(e.data);
+        }
+
+
+5.服务器端配置:在服务器接收端配置haeder
+header("Access-Control-Allow-Origin:http://www.a.com");//固定配置 *代表所有的域都可以访问
+//http://www.a.com代表只有A域能访问;
+
+
+
+
+
+
+前端向后台提交数据方式：
+get/form/ajax/
+
+
+get方式:一般用于从服务端获取数据
+       参数存放在url后面: 比如：name=list <iframe src="http://www.b.com/index2.php?name=list"></iframe>
+       是明文，所以不安全
+       get在请求头里（请求头容量小）：
+       所以参数数据较小 ， 
+       
+
+post方式:一般是向服务端提交数据
+          参数不是明文，相对安全
+          post在请求体里，（容量大）
+          所以 传输体积大
+          
+    
+        
+        
+
