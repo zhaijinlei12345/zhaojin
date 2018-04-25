@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            position:absolute;
+            background: skyblue;
+            top: 50%;
+            left: 50%;
+            transform:translate(-50%,-50%);
+           /*margin-left: -100px;*/
+            /*margin-top: -100px;*/
+            /*text-align: center;*/
+            /*line-height: 500px;*/
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="div2">
+    <div id="div1">123</div>
+</div>
+
+
+<script>
+    var a={age:20};
+    var b=a;
+        b.age=50;
+    console.log(a.age);
+
+
+
+
+</script>
+</body>
+</html>
