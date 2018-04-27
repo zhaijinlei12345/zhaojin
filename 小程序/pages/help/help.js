@@ -5,6 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    longitude: "",
+    latitude: "",
+
     markers: [{
       id: "1",
       latitude: 121.527323,
@@ -28,7 +31,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    wx.getLocation({
+      type: 'wgs84',
+      success: function (res) {
+        this.latitude= res.latitude
+        this.longitude = res.longitude
+        var speed = res.speed
+        var accuracy = res.accuracy
+      }
+    })
   },
 
   /**
