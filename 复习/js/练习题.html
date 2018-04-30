@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <script>
+
+//    <!--阶乘计算
+//        递归-->
+     function fn(num) {
+         if(num==1){
+             return 1;
+         }
+         return num*arguments.callee(num-1);
+//         return num*fn(num-1);
+     }
+      var f= fn(5);
+      console.log(f);
+
+//    <!--阶乘计算
+//        非递归-->
+
+     function ff(n) {
+         var res=1;
+         for(var i=1;i<=n;i++){
+             res=res*i;
+         }
+         return res;
+     }
+     var resT=ff(5);
+     console.log(resT);
+
+
+
+//1!+2!+........+n!
+     function dd(unm) {
+         var number=0;
+         for (var i=1;i<=unm;i++){
+            number=number+fn(i);
+         }
+         return number;
+     }
+     var bb=dd(1);
+     console.log(bb);
+
+
+     function print(n) {
+         for(var i=1;i<=n;i++){
+             for(var k=1;k<=n-i;k++){
+                 document.write("&nbsp");
+             }
+             for (var j=1;j<=i;j++){
+                 document.write("*&nbsp;")
+             }
+             document.write("<br>");
+         }
+     }
+     print(5);
+ </script>
+</body>
+</html>
