@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        *{margin:0; padding:0;}
+        body{width:100%; height:100%;}
+        #canvas{background-color:#CCC;}
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="500" height="500">你的浏览器不支持canvas</canvas>
+<script>
+    var canvas = document.getElementById('canvas');
+    var context = canvas.getContext('2d');
+    if(context){
+        var obj = [];
+        var Circle = function(){
+            this.type = "circle";
+            this.x = 0;
+            this.y = 0;
+            this.radius = 0;
+            this.color = "red";
+            this.isHover = false;
+        };
+        var Draw = function(){
+            context.clearRect(0,0,canvas.width,canvas.height);
+            for(var i=0;i<obj.length;i++){
+                if(obj[i].type = "circle"){
+                    context.beginPath();
+                    context.lineWidth = 1;
+                    context.strokeStyle = obj[i].color;
+                    context.arc(obj[i].x,obj[i].y,obj[i].radius,0,2*Math.PI,false);
+                    context.stroke();
+                    context.closePath();
+                }
+            }
+        };
+    }
+
+    //绘制100个圆圈
+    for(var i=0;i<100;i++){
+        var c = new Circle();
+        c.x = Math.random()*500;
+        c.y = Math.random()*500;
+        c.radius = 5;
+        c.hover = function(){
+            this.color = "black";
+            Draw();
+        }
+        c.out = function(){
+            this.color = "red";
+            Draw();
+        }
+        //点击事件
+//    c.isClick = function(){
+//        alert("");
+//    }
+        obj.push(c);
+    }
+
+    Draw();
+
+    //鼠标移上去改变圆圈颜色，触发点击事件可改为onclick
+    canvas.onclick = function(e){
+        for(var i=0;i<obj.length;i++){
+            var c = obj[i];
+            //client是相对于浏览器的坐标，如要获取相对于父元素即canvas画布，可以替换成e.offsetX和e.offsetY获取坐标
+            if((e.clientX-c.x)*(e.clientX-c.x)+(e.clientY-c.y)*(e.clientY-c.y)<=c.radius*c.radius){
+                c.isHover = true;
+                c.hover && c.hover();
+            }else{
+                if(c.isHover){
+                    c.isHover = false;
+                    c.out && c.out();
+                }
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>canvas</title>
+    <script src="./jquery-1.11.2.js"></script>
+    <script>
+        CanvasRenderingContext2D.prototype.circle = function (x, y, radius)
+        {
+            this.save();
+
+            this.beginPath();
+            this.arc(x, y, radius, 0, 2 * Math.PI);
+            this.closePath();
+
+            this.restore();
+
+            return this;
+        }
+    </script>
+    <script>
+        $(function()
+        {
+            // 存储wave的数组
+            var waveArray = [];
+
+            // 获取Canvas Context
+            var myCanvas = document.getElementById("myCanvas");
+            var canvasContext = myCanvas.getContext("2d");
+
+            // wave批量绘制函数
+            var waveBatchPaintFunc = function()
+            {
+                // waveArray数组为空，则不处理
+                if (waveArray.length == 0) return;
+
+                // 清空canvas绘图区
+                canvasContext.clearRect(0, 0, myCanvas.width, myCanvas.height);
+
+                // 遍历waveArray数组（从后往前遍历，便于删除wave）
+                for (var i = waveArray.length - 1; i >= 0; i--)
+                {
+                    var waveItem = waveArray[i];
+
+                    // 根据速度增加wave绘制半径
+                    waveItem.radiusCurrent += waveItem.speed;
+
+                    // 判断是否超过最大半径
+                    if (waveItem.radiusCurrent < waveItem.radiusMax)
+                    {
+                        // 每个wave定制颜色
+                        canvasContext.fillStyle = waveItem.color;
+
+                        // wave半径越大，其透明度越小
+                        //canvasContext.globalAlpha = 1 - waveItem.radiusCurrent / waveItem.radiusMax;
+
+                        // 绘制wave
+                        canvasContext.circle(waveItem.position.x, waveItem.position.y, waveItem.radiusCurrent).fill();
+                    }
+                    else
+                    {
+                        // wave超过最大半径，则删除它
+                        waveArray.splice(i, 1);
+                    }
+                }
+            }
+
+            // 每50ms批量绘制一次
+            setInterval(waveBatchPaintFunc, 50);
+            // 鼠标移动事件绑定
+            $("#myCanvas").on("click", function(e)
+            {
+                //if (!mouseLock)
+                //{
+                    // 每绘制一次则锁定鼠标事情，等待下次解锁
+                 //   mouseLock = true;
+
+                    // 准备新wave的初始参数
+                    var waveSpeed = 5;
+                    var radiusMax = myCanvas.width / 2;
+
+                    var speedRand = (Math.random() * 2 + 1) / 3;
+                    var radiusRand = Math.random();
+
+                    // 鼠标的每次移动都会生成一个wave
+                    waveArray.push(
+                        {
+                            "color" : colorRand(),
+                            "radiusCurrent" : 0,
+                            "speed" : waveSpeed * speedRand,        // 乘以速度系数，使每个wave的速度都不同
+                            "radiusMax" :  radiusMax * radiusRand,  // 乘以半径系数，使每个wave的最大半径都不同
+                            "position" : { "x" : e.offsetX, "y" : e.offsetY }
+                        }
+                    );
+               // }
+            });
+
+            // 随机颜色生成函数
+            var colorRand = function()
+            {
+                // 候选颜色
+                var colorCandidate = "ABCDEF";
+
+                var redRand   = Math.floor(Math.random() * colorCandidate.length);
+                var greenRand = Math.floor(Math.random() * colorCandidate.length);
+                var blueRand  = Math.floor(Math.random() * colorCandidate.length);
+
+                var colorRed   = colorCandidate[redRand];
+                var colorGreen = colorCandidate[greenRand];
+                var colorBlue  = colorCandidate[blueRand];
+
+                return "#" + colorRed + colorGreen + colorBlue;
+            }
+        });
+    </script>
+    <style>
+        #myCanvas
+        {
+            /* border:1px solid #AAA; */
+        }
+    </style>
+</head>
+<body>
+<canvas id="myCanvas" width="720" height="640">
+    Your browser does not support the canvas element.
+</canvas>
+</body>
+</html>
