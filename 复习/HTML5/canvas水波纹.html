@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="720" height="640"></canvas>
+<script src="jquery-1.11.2.js"></script>
+<script>
+
+    CanvasRenderingContext2D.prototype.circle = function (x, y, radius)
+    {
+        this.save();
+        this.beginPath();
+        this.arc(x, y, radius, 0, 2 * Math.PI);
+        this.closePath();
+        this.restore();
+        this.fill();
+        return this;
+    }
+    $(function()
+    {
+        // 存储wave的数组
+        var waveArray = [];
+
+        // 获取Canvas Context
+        var myCanvas = document.getElementById("myCanvas");
+        var canvasContext = myCanvas.getContext("2d");
+        // 鼠标移动事件绑定
+        $("#myCanvas").on("click", function(e) {
+            // 准备新wave的初始参数
+
+            var radiusMax = myCanvas.width / 2;
+            // 鼠标的每次移动都会生成一个wave
+            waveArray.push(
+                {
+                    "color" : color(),
+                    "radiusCurrent" : 0,
+                    "radiusMax" :  radiusMax,  // wave的最大半径
+                    "position" : { "x" : e.offsetX, "y" : e.offsetY }
+                }
+            );
+            // }
+        });
+
+        // wave批量绘制函数
+        var waveBatchPaintFunc = function(){
+            // waveArray数组为空，则不处理
+            if (waveArray.length == 0) return;
+            // 清空canvas绘图区
+            canvasContext.clearRect(0, 0, myCanvas.width, myCanvas.height);
+            // 遍历waveArray数组
+            for (var i =0; i < waveArray.length ; i++)
+            {
+                var waveItem = waveArray[i];
+
+                // 根据速度增加wave绘制半径
+                waveItem.radiusCurrent += 5;
+
+                // 判断是否超过最大半径
+                if (waveItem.radiusCurrent < waveItem.radiusMax)
+                {
+                    // 每个wave定制颜色
+                    canvasContext.fillStyle = waveItem.color;
+                    // 绘制wave
+                    canvasContext.circle(waveItem.position.x, waveItem.position.y, waveItem.radiusCurrent);
+                }
+                else
+                {
+                    // wave超过最大半径，则删除它
+                    waveArray.splice(i, 1);
+                }
+            }
+        }
+
+        // 每50ms批量绘制一次
+        setInterval(waveBatchPaintFunc, 50);
+
+
+        // 随机颜色生成函数
+        var color = function()
+        {
+            // 候选颜色
+            var colorCandidate = "ABCDEF";
+            var redRand   = Math.floor(Math.random() * colorCandidate.length);
+            var greenRand = Math.floor(Math.random() * colorCandidate.length);
+            var blueRand  = Math.floor(Math.random() * colorCandidate.length);
+            var colorRed   = colorCandidate[redRand];
+            var colorGreen = colorCandidate[greenRand];
+            var colorBlue  = colorCandidate[blueRand];
+            return "#" + colorRed + colorGreen + colorBlue;
+        }
+    });
+</script>
+</body>
+</html>
