@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>驼峰格式</title>
+</head>
+<body>
+<script>
+    var a='post-all-msg';
+    console.log(a);
+    var b=a.split('-');
+    console.log(b);
+    var k=[];
+    var h=[];
+    var word="";
+    for (var i=0;i<b.length;i++){
+         k[i]= b[i].split("");
+    }
+    for(var j=1;j<k.length;j++){
+        var w= k[j][0].toUpperCase();
+           h[j]=k[j].length;
+        k[j].splice(0,1,w);
+    }
+    for(var n=0;n<k.length;n++){
+        var l= k[n].join('');
+
+
+       console.log(l);
+       word+=l;
+    }
+        console.log(word);
+
+</script>
+</body>
+</html>
