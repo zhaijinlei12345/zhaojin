@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isInteger(obj) {
+        return typeof obj === 'number' && obj%1 === 0
+    }
+    console.log(isInteger(2));
+   console.log( isInteger('')); // false
+    isInteger('3') ;// false
+    isInteger(true); // false
+    isInteger([]) // false
+
+
+
+</script>
+</body>
+</html>
