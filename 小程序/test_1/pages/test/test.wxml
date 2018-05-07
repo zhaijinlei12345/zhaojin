@@ -1,0 +1,6 @@
+<!--pages/test/test.wxml-->
+<view>测试</view>
+<view>{{name}}</view>
+<view>{{testuser}}</view>
+<navigator hover-class='active' url='../nav/nav'>跳转nav</navigator>
+
