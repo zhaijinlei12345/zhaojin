@@ -1,7 +1,8 @@
 var app=getApp();
+
 // pages/test/test.js
 Page({
-
+    
   /**
    * 页面的初始数据
    */
@@ -9,7 +10,18 @@ Page({
      name:"刘波",
      testuser:'ssr'
   },
-  
+   
+  handleTap1:function(event){
+    console.log(event);
+    console.log("父");
+  },
+  handleTap2: function(event){
+    console.log(event);
+    console.log("子");
+  },
+  handleTap3: function(event){
+    console.log(event);
+  },
   /**
    * 生命周期函数--监听页面加载
    */

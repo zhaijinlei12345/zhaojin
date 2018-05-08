@@ -3,4 +3,12 @@
 <view>{{name}}</view>
 <view>{{testuser}}</view>
 <navigator hover-class='active' url='../nav/nav'>跳转nav</navigator>
-
+<view id="f" bindtouchmove='handleTap1'>
+ outer view
+  <view id="s" bindtap='handleTap2'>
+    middle view
+      <view id="t" bindtap='handleTap3'>
+       inner view 
+      </view>
+  </view>
+</view>

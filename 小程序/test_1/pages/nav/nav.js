@@ -1,15 +1,25 @@
+var common = require("../common/common.js");
 // pages/nav/nav.js
 Page({
-
+   
+  
+    
   /**
    * 页面的初始数据
    */
   data: {
-  
+      array:[1,2,3,4,5],
+      view:"C",
+      staffA: { firstName: 'Hulk', lastName: 'Hu' },
+      staffB: { firstName: 'Shang', lastName: 'You' },
+      staffC: { firstName: 'Gideon', lastName: 'Lin' }
   },
-   back:function(){
-     wx.navigateBack();
-   },
+  helloMINA: function () {
+    common.sayHello('MINA')
+  },
+  goodbyeMINA: function () {
+    common.sayGoodbye('MINA')
+  },
   /**
    * 生命周期函数--监听页面加载
    */
