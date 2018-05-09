@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  if(window.XMLHttpRequest()){
+      var xmlhttp = new  XMLHttpRequest();
+
+  }else {
+      var xmlhttp = new  ActiveXObject("Microsoft.HTTP");
+  }
+   xmlhttp.open("GET","xx.json",true);
+   xmlhttp.send();
+   xmlhttp.onreadystatechange=function () {
+       if(xmlhttp.readyState==4&&xmlhttp.status==200){
+          var innr =  xmlhttp.responseText;
+          console.log(innr);
+       }
+   }
+</script>
+</body>
+</html>
