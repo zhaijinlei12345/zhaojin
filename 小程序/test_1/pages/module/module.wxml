@@ -1,0 +1,22 @@
+<!--pages/module/module.wxml-->
+
+<!-- <view class="flex-wrap">
+   <view class="a">a</view>
+   <view class="b">b</view>
+   <view class="c">c</view>
+
+</view> -->
+
+<!-- <scroll-view bindscroll="scroll" scroll-into-view="{{toView}}" scroll-y="{{true}}" upper-threshold="100" lower-threshold="100"  bindscrolltoupper="scrolltoupper"  bindscrolltolower="scrolltolower" scroll-x="{{true}}" class="wrap">
+   <view id="a" class="a">a</view>
+   <view id="b" class="b">b</view>
+   <view id="c" class="c">c</view>
+</scroll-view>
+<button bindtap="tapChange">切换</button> -->
+<swiper indicator-dots="{{true}}" indicator-color="{{rgba(255, 3, 23, .3)}}"  indicator-active-color="#000000" autoplay="{{auto}}" circular="{{ture}}" interval="{{inter}}">
+ <swiper-item wx:for="{{img}}" >
+ <image src="{{item}}"></image>
+ </swiper-item>
+</swiper>
+<slider  bindchange='interval'  show-value min='1000' max='5000'></slider>
+<button bindtap='changeauto'>Change</button>
