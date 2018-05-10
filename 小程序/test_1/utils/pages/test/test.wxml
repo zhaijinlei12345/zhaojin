@@ -1,0 +1,21 @@
+<!--pages/test/test.wxml-->
+<view>测试</view>
+<view>{{name}}</view>
+<view>{{testuser}}</view>
+<navigator hover-class='active' url='../nav/nav'>跳转nav</navigator>
+<!--只加载template  -->
+<import src="./in.wxml"/>
+<template is="item" data="{{word:'sss'}}"></template>
+<!--都加载，除了template  -->
+<include src="in.wxml"/>
+<view id="f" bindtouchmove='handleTap1'>
+ outer view
+  <view id="s" bindtap='handleTap2'>
+    middle view
+      <view id="t" bindtap='handleTap3'>
+       inner view 
+      </view>
+  </view>
+</view>
+<view class="rpx">WSSS</view>
+<view class="a">MMMM</view>

@@ -1,0 +1,1 @@
+console.log("我是common依赖的a.js");

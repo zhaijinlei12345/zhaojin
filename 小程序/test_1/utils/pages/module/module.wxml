@@ -44,29 +44,12 @@
   <radio  wx:for="{{country}}" checked='{{item.checked}}' name="{{item.name}}" color='{{red}}'>{{item.value}}</radio>
   </radio-group>
   <view>
-   账号：<input type='text' placeholder="请输入账号" focus='true' adjust-position="true"></input>
-   密码:<input password='{{key}}' placeholder="请输入密码" focus='true' adjust-position="true"></input>
+   账号：<input type='text' placeholder="请输入账号" focus='true'></input>
+   密码:<input password='{{key}}' placeholder="请输入密码" focus='true'></input>
    <button bindtap='changekey'>
      <view wx:if="{{key}}">隐藏密码</view>
      <view wx:else="{{key}}">显示密码</view>
    </button>
   </view>
-  
-  <view>选择城市：</view>
-  <picker range='{{city}}' bindchange='changerange' value='{{index}}'>
-     <view>当前选择:{{city[index]}}</view>
-  </picker> 
- <view>选择时间</view>
- <view>
- <picker start="09:00" end="21:00" value="{{time}}" mode="time" bindchange='changetime'>
-   <view>当前选择:{{time}}</view>
- </picker>
- </view>
- <view>选择日期</view>
- <view>
- <picker start="1990-09-01" end="2020-09-01" value="{{date}}" mode="date" bindchange='changedate'>
-   <view>当前选择:{{date}}</view>
- </picker>
- </view>
-   
+ 
 </form>

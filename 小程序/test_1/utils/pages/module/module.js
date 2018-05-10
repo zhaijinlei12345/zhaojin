@@ -28,34 +28,13 @@ Page({
        { name: 'ENG', value: '英国' },
        { name: 'TUR', value: '法国' },
      ],
-     city:["北京","上海","广州","深圳","杭州"],
-     index:"0",
-     time:"09:01",
-     date: "1990-09-01",
      key:true
      
-  },
-  changedate: function (e) {
-    this.setData({
-      date: e.detail.value
-    })
-
-  },
-  changetime:function(e){
-    this.setData({
-      time: e.detail.value
-    })
   },
   changekey:function(){
     this.setData({
       key:!this.data.key
     });
-  },
-  changerange:function(e){
-    this.setData({
-      index: e.detail.value
-    })
-    
   },
   changeradio: function (e) {
     console.log('radio发生change事件，携带value值为：', e.detail.value)

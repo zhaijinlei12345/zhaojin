@@ -1,0 +1,21 @@
+/* pages/module/module.wxss */
+
+.wrap{
+    height: 400rpx;
+    width: 400rpx;
+    border: 1px solid red;
+   /* overflow: scroll; */
+}
+.wrap view{
+    height: 250rpx;
+    width: 600rpx;
+}
+.a{
+    background-color: green;
+ }
+.b{
+     background-color: sandybrown;
+ }
+.c{
+     background-color: rgb(35, 195, 223);
+ } 
