@@ -33,4 +33,8 @@
 <icon type='search'></icon>
 <icon type='clear'></icon> -->
 
-<progress percent="{{progress}}" show-info="{{true}}"  active-mode="backwards" active="{{true}}"></progress>
+ <progress percent="{{progress}}" show-info="{{true}}"  active-mode="backwards" active="{{true}}"></progress> 
+<form bindsubmit="sub">
+  <input type='text' name="textname"></input>
+  <button formType='submit' loading='ture'>jklsa</button>
+</form>

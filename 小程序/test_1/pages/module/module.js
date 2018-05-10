@@ -22,12 +22,15 @@ Page({
      progress: "0"
      
   },
+ 
   interval:function(e){
      this.setData({
        inter: e.detail.value
      })
   },
-  
+  sub: function (e) {
+    console.log(e.detail.value);
+  },
   changeauto:function(){
     this.setData({
       auto:!this.data.auto
