@@ -1,6 +1,7 @@
 // pages/module/module.js
 var order = ["a","b","c"];
 var index = 0;
+var Num=0;
 Page({
    /**
    * 页面的初始数据
@@ -13,14 +14,20 @@ Page({
        'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
        'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
      ],
+     iocns:[
+       "success", "success_no_circle", "info", "warn", "waiting", "cancel", "download", "search", "clear"
+     ],
      inter:"1000",
-     auto:true
+     auto:true,
+     progress: "0"
+     
   },
   interval:function(e){
      this.setData({
        inter: e.detail.value
      })
   },
+  
   changeauto:function(){
     this.setData({
       auto:!this.data.auto
@@ -50,7 +57,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+          var that=this;
+         var timer =setInterval(function(){
+          Num++;
+          if(Num>=100){
+            clearInterval(timer)
+          }
+          that.setData({
+            progress:Num
+          });
+         },30)
   },
 
   /**

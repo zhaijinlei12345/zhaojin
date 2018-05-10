@@ -1,8 +1,0 @@
-<view style="color:blue">我是include,template已经失联</view>
-<template name="item">
-<view style='color:red'>
-{{word}}
-</view>
-</template>
-
-
