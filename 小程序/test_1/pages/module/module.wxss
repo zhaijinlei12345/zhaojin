@@ -19,3 +19,10 @@
 .c{
      background-color: rgb(35, 195, 223);
  } 
+ .text{
+   border: 2px solid green
+ }
+  .textplace{
+    color: skyblue;
+    font-size: 40rpx;
+  }

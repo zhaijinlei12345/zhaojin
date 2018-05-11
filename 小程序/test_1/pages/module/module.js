@@ -2,6 +2,7 @@
 var order = ["a","b","c"];
 var index = 0;
 var Num=0;
+var api = "http://t.yushu.im/v2/movie/top250";
 Page({
    /**
    * 页面的初始数据
@@ -35,11 +36,19 @@ Page({
      key:true
      
   },
+  text:function(e){
+    console.log(e);
+  },
   changedate: function (e) {
     this.setData({
       date: e.detail.value
     })
 
+  },
+  changeswitch:function(e){
+    this.setData({
+      key: !this.data.key
+    });
   },
   changetime:function(e){
     this.setData({
@@ -67,6 +76,53 @@ Page({
      this.setData({
        inter: e.detail.value
      })
+  },
+  showaction:function(){
+    wx.showActionSheet({
+      itemList: ['a','b','c'],
+      success :function(res){
+        if(!res.cancel){
+          console.log(res.tapIndex)
+        }
+      }
+    })
+  },
+  showmodel:function(){
+    wx.showModal({
+      title: '题目',
+      content: '这是个弹窗',
+      confirmColor:'skyblue',
+      confirmText:'选择',
+      success:function(res){
+        if(res.confirm){
+          console.log("确定");
+        } else if (res.cancel){
+             console.log("取消");
+        }
+      }
+    })
+  },
+  wren:function(){
+        wx.showToast({
+          title: '提示',
+          icon :'loading',
+          duration:10000,
+          success: function () {  
+              console.log("确定");
+          }
+
+        })
+        wx.request({
+          url: api, //仅为示例，并非真实的接口地址
+          data: {},
+          header: {
+            'content-type': 'application/json' // 默认值
+          },
+          success: function (res) {
+            console.log(res.data)
+            wx.hideToast();
+          }
+        })
   },
   sub: function (e) {
     console.log(e.detail.value);

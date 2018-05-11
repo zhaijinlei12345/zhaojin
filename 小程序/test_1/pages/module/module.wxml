@@ -68,5 +68,15 @@
    <view>当前选择:{{date}}</view>
  </picker>
  </view>
-   
+  <view>
+   <switch bindchange='changeswitch'type="switch" ></switch>
+    <switch bindchange='changeswitch'type="checkbox" ></switch>
+   <slider show-value step='10' ></slider>
+    <slider show-value ></slider>
+  </view>
+  <textarea class="text" placeholder="请输入" placeholder-class='textplace' adjust-position="{{true}}" bindlinechange='text'></textarea>
+
 </form>
+<button bindtap='showaction' >显示菜单</button>
+<button bindtap='showmodel'>弹窗</button>
+<button bindtap='wren'>提示框</button>
