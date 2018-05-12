@@ -1,0 +1,5 @@
+<!-- <view  style="width: 100%; height:400rpx">
+<map  longitude="113.324520" latitude="23.099994" show-location="true"  polyline='{{polyline}}' markers='{{markers}}'  controls='{{controls}}' style="width: 100%; height:100%;"></map>
+</view> -->
+<!-- <button bindtap='getGps'>获取的我的位置</button> -->
+<canvas style="width: 100%; height: 100%; background-color:#ccc" canvas-id="firstCanvas"></canvas>
