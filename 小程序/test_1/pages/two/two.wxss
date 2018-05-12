@@ -1,0 +1,5 @@
+/* pages/two/two.wxss */
+.navigator{
+ background-color: skyblue;
+ color: gray;
+}
