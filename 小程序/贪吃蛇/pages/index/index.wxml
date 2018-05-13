@@ -1,0 +1,6 @@
+<view>
+ 长度：{{count}}
+</view>
+<canvas canvas-id="snake" style="width:100%; height:100%;  background-color:#ccc;" bindtouchstart="strat" bindtouchmove="move" bindtouchend="end">
+<view wx:if="{{refurbish}}"></view>
+</canvas>
