@@ -1,6 +1,5 @@
 <template>
   <div class="music-list">
-   
     <ul class="albums">
       <li v-for="obj in musicList" :key="obj.id">
       <router-link :to="'/music/player/'+obj.id">
@@ -42,9 +41,9 @@ export default {
      width: 50%;
      height: 33.33333333%;
      float: right;
-    
+
    }
-   .albums li img{  
+   .albums li img{
        width: 100%;
        height: 100%;
    }

@@ -8,20 +8,20 @@
 <script>
 import CommonHeader from "../common/CommonHeader"
 import CommonFooter from "../common/CommonFooter"
-import Axios from 'axios'
+//import Axios from 'axios'
 export default {
-  data(){
-    return {
-      musicList:[]
-    }
-  },
-  mounted(){
-    Axios.get('/static/musiclist.json')
-    .then((res)=>{
-      this.musicList=res.data.albums;
-    })
-  },
-  name: 'Music',
+//  data(){
+//    return {
+//      musicList:[]
+//    }
+//  },
+//  mounted(){
+//    Axios.get('/static/musiclist.json')
+//    .then((res)=>{
+//      this.musicList=res.data.albums;
+//    })
+//  },
+//  name: 'Music',
 
   components:{
      CommonHeader,
