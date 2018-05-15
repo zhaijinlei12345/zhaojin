@@ -18,11 +18,15 @@
            height: 125px;
            margin: 200px auto;
            position: relative;
+           transform-style: preserve-3d;
+           /*background: #ff0000;*/
+           transition: all 1s linear;
        }
         #all img{
             width: 125px;
             height: 125px;
             position: absolute;
+            transition: all 1s linear;
         }
     </style>
 </head>
@@ -46,6 +50,21 @@ var counter=0;
         oimg.src="images/"+(i+1)+".jpg";
         oa.appendChild(oimg);
     }
+
+var num = 0;
+oa.onclick = function(){
+    num++;
+    oa.style.transform = "rotateY("+ num * 40 +"deg)";
+};
+
+
+function loadSuccess(){
+    var aImg = oa.getElementsByTagName("img");
+    for(var i=0; i<aImg.length; i++){
+        aImg[i].style.transitionDelay = i * 100 + "ms";
+        aImg[i].style.transform = "rotateY("+ (i + 1) * 40 +"deg) translateZ(180px)";
+    }
+}
 </script>
 </body>
 </html>
