@@ -1,3 +1,30 @@
 <!--pages/movie/movie.wxml-->
-<text>pages/movie/movie.wxml</text>
-<view>我是详情页</view>
+<scroll-view scroll-y="true">
+ <view class='detail'>
+ <view class='img'>
+<image class='poster' style='background-size:"cover"' src="{{movie.images.large}}"></image></view>
+  <view class='meta'>
+      <text class='title'>片名：{{movie.title}}</text>
+       <text class='sort' >类型：{{movie.genres}}</text>
+        <text class='artists'><text wx:for="{{movie.directors}}"> 导演：{{item.name}}
+      </text>
+      <text class='country'>国家：{{movie.countries}}</text>
+      <text class='year'>年份：{{movie.year}}</text>
+      <text class='avg'>评分：{{movie.rating.average}}</text>
+      </text>
+  </view> 
+ <view class='total'>
+  <view class='introduce' wx:for="{{movie.casts}}">
+     <image class='detract' src='{{item.avatars.large}}'></image>
+     <text class='actor'>{{item.name}}</text>
+  </view>
+ </view>
+   <view class='summery'>
+   <view class='sun'>摘要：</view>
+   {{movie.summary}}
+   </view>
+ </view>
+  
+
+
+</scroll-view>

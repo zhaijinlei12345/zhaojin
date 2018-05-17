@@ -1,18 +1,33 @@
 // pages/movie/movie.js
+var API_URL ="http://t.yushu.im/v2/movie/subject/"
 Page({
-
+ 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    movie:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-  
+  onLoad: function (arg) {
+    var that=this;
+    wx.request({
+      url: API_URL+arg.id, //仅为示例，并非真实的接口地址
+      data: {},
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        that.setData({
+          movie: res.data
+        })
+        console.log(res.data)
+      }
+    })
+     console.log(arg);
   },
 
   /**

@@ -1,1 +1,54 @@
 /* pages/movie/movie.wxss */
+.detail{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 1000rpx;
+  padding: 50rpx 40rpx;
+}
+.poster{
+  width: 95%;
+  height: 95%;
+}
+.img{
+ width: 100%;
+  height: 100%;
+}
+.meta .title,.meta .year,.meta .country,.meta .sort,.meta .artists,.meta .avg{
+   display: block;
+   margin-bottom: 14rpx;
+}
+.meta{
+  height: 100%;
+  width: 100%;
+  color: #666;
+  font-size: 40rpx;
+  padding: 10rpx
+  
+}
+.introduce{
+  display: flex;
+  padding: 20rpx 0;
+  border-bottom: 2rpx solid #eee;
+  
+  
+}
+.detract{
+  width: 200rpx;
+  height: 200rpx;
+  
+}
+.total{
+  height: 100%;
+  width: 100%;
+}
+.actor{
+  padding: 30rpx 20rpx;
+}
+.summery{
+  font-size:32rpx;
+}
+.sun{
+  font-weight: bold;
+  font-size: 40rpx;
+}
