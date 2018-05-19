@@ -1,0 +1,37 @@
+<!--pages/movie/movie.wxml-->
+<view  class='all'>
+<view class='img'>
+<video class='poster' page-gesture='true' src="{{movie.MovieDetailModel.vd}}"></video></view>
+<scroll-view scroll-y="true">
+ <view class='detail'>
+  <view class='meta'>
+      <text class='title'>片名：{{movie.MovieDetailModel.nm}}</text>
+       <text class='sort' >类型：{{movie.MovieDetailModel.cat}}</text>
+        <text class='artists'><text> 导演：{{movie.MovieDetailModel.dir}}
+      </text>
+      <text class='ct'>效果：{{movie.MovieDetailModel.ver}}</text>
+       <text class='country'>国家：{{movie.MovieDetailModel.src}}</text>
+      <text class='year'>时间：{{movie.MovieDetailModel.rt}}</text>
+      <text class='avg'>评分：{{movie.MovieDetailModel.sc}}</text>
+      </text>
+  </view> 
+ 
+   <view class='summery'>
+   <view class='sun'>简介：</view>
+   {{movie.MovieDetailModel.dra}}
+   </view>
+   <view class='total'>
+  <view class='introduce' wx:for="{{movie.CommentResponseModel.hcmts}}">
+     <view class="headimg"><image class='detract' src='{{item.avatarurl}}'></image></view>
+     <view>
+       <text class='actor'>{{item.nick}}</text>
+       <text class='time'>{{item.time}}</text>
+       <text class='talk'>{{item.content}}</text>
+     </view>
+   
+
+  </view>
+ </view>
+ </view>
+</scroll-view>
+</view>

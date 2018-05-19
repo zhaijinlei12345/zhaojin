@@ -1,2 +1,21 @@
-<!--pages/profile/profile.wxml-->
-<view>我的页</view>
+<!--index.wxml-->
+<view class="page-header">
+<text class="page-header-text">{{title}}</text>
+</view>
+<scroll-view class='page-body' scroll-y="true">
+<navigator url="../hot/hot?id={{item.id}}" wx:for="{{movies}}" >
+  <view class='item'>
+  <image class="poster" src="{{item.img}}"></image>
+  <view class='meta'>
+      <text class='title'>{{item.nm}}({{item.ver}})</text>
+      <text class='year' >类型：{{item.cat}}：({{item.rt}})</text>
+      <text class='artists'><text> 导演 {{item.dir}}
+      </text>
+      </text>
+  </view>
+  <view class='average'>
+  <text>{{item.sc}}</text>
+  </view>   
+  </view>
+</navigator>  
+</scroll-view>

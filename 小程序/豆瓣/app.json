@@ -4,7 +4,8 @@
     "pages/movie/movie",
     "pages/search/search",
     "pages/profile/profile",
-    "pages/coming/coming"
+    "pages/coming/coming",
+    "pages/hot/hot"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -21,24 +22,25 @@
         "iconPath": "img/flove.png",
         "selectedIconPath": "img/flove-f.png"
       },
-        {
-          "pagePath": "pages/coming/coming",
-          "text": "即将上映",
-          "iconPath": "img/swtt.png",
-          "selectedIconPath": "img/swt.png"
-        },
+      {
+        "pagePath": "pages/coming/coming",
+        "text": "热门电影",
+        "iconPath": "img/swtt.png",
+        "selectedIconPath": "img/swt.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "即将上映",
+        "iconPath": "img/myone.png",
+        "selectedIconPath": "img/my.png"
+      },
       {
         "pagePath": "pages/search/search",
         "text": "搜索",
         "iconPath": "img/searchone.png",
         "selectedIconPath": "img/searchtwo.png"
-      },
-      {
-        "pagePath": "pages/profile/profile",
-        "text": "我的",
-        "iconPath": "img/myone.png",
-        "selectedIconPath": "img/my.png"
       }
+     
     ]
   }
 }

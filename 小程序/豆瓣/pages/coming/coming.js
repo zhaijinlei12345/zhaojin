@@ -22,7 +22,7 @@ Page({
         wx.hideToast();
         var data = res.data;
         that.setData({
-          title: "即将上映",
+          title: "热门电影",
           movies: data.subjects
         });
         console.log(res.data);

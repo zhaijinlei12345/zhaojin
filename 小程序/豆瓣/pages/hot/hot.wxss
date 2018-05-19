@@ -1,20 +1,24 @@
 /* pages/movie/movie.wxss */
+.all{
+  padding: 50rpx 40rpx;
+}
 .detail{
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 1000rpx;
-  padding: 50rpx 40rpx;
+ 
 }
 .poster{
-  width: 95%;
-  height: 95%;
-}
-.img{
- width: 100%;
+  width: 100%;
   height: 100%;
 }
-.meta .title,.meta .year,.meta .country,.meta .sort,.meta .artists,.meta .avg{
+.img{
+  width: 100%;
+  height: 600rpx;
+  margin-bottom: 10rpx
+}
+.meta .title,.meta .year,.meta .country,.meta .sort,.meta .artists,.meta .avg,.meta .ct{
    display: block;
    margin-bottom: 14rpx;
 }
@@ -30,13 +34,11 @@
   display: flex;
   padding: 20rpx 0;
   border-bottom: 2rpx solid #eee;
-  
-  
 }
 .detract{
-  width: 200rpx;
-  height: 200rpx;
-  
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
 }
 .total{
   height: 100%;
@@ -44,6 +46,9 @@
 }
 .actor{
   padding: 30rpx 20rpx;
+  display: block;
+  font-weight: bold;
+  color: blue;
 }
 .summery{
   font-size:32rpx;
@@ -53,4 +58,16 @@
 .sun{
   font-weight: bold;
   font-size: 40rpx;
+}
+.headimg{
+  height: 100rpx;
+  width: 100rpx;
+}
+.talk{
+  font-size:32rpx;
+}
+.time{
+   color: #999;
+   font-size: 20rpx;
+   display: block;
 }

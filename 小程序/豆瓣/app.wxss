@@ -16,6 +16,7 @@ page{
   padding: 20rpx 40rpx;
   color: #999;
   font-size: 40rpx;
+  text-align: center;
 }  
 .page-body{
  display: flex;
@@ -31,7 +32,7 @@ page{
 }
 .item .poster{
   width: 136rpx;
-  height: 136rpx;
+  height: 160rpx;
   margin: 0 30rpx;
 }
 .item .meta{
