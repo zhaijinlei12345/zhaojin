@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+         body{
+             height: 500px;
+         }
+        input:focus{
+            background: #cc0000;
+        }
+
+     #ul1 li:not(:nth-child(even)){
+          background: chartreuse;
+        }
+        ul li:only-child{
+            background: salmon;
+        }
+        input:checked{
+            background-color: red;
+        }
+        #div2::first-line{
+            background: royalblue;
+        }
+        #div2::first-letter{
+            background: blueviolet;
+        }
+         #div2::selection{
+             background: yellow;
+         }
+
+  #div2{
+      width: 200px;
+      border: 1px solid;
+
+     }
+
+    </style>
+</head>
+<body>
+<input type="text" >
+<input type="submit">
+<ul id="ul1">
+    <li>001</li>
+    <li>002</li>
+    <li class="aa">003</li>
+    <li>004</li>
+    <li>005</li>
+</ul>
+<ul>
+    <li>sadj</li>
+</ul>
+<form>
+    <input type="checkbox" checked="checked" class="ch">
+    <input type="checkbox"  checked="checked" class="ch">
+    <input type="checkbox"  checked="checked" class="ch">
+
+</form>
+
+<div id="div2">sjdahdj khdsak hdj kdas hjk dsajh ak djhadk aj hskjda dsjkad</div>
+</body>
+</html>

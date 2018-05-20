@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1::after{
+            content: "ccc";
+        }
+        #div1::before{
+             content: "aaa";
+        }
+        a::after{
+            content: attr(href);
+        }
+        #ul1{
+            /*height: 30px;*/
+            /*float: left;*/
+            /*position: absolute;*/
+            /*overflow: hidden ;*/
+
+        }
+        #ul1 li{
+            list-style: none;
+            float: left;
+        }
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">bbb</div>
+<a href="www.baidu,com">badu</a><br>
+<a href="www.tianmao.com">mm</a><br>
+<a href="www.baidu.com">wwe</a>
+<ul id="ul1" class="clearfix">
+    <li>001</li>
+    <li>002</li>
+    <li>003</li>
+    <li>004</li>
+</ul>
+</body>
+</html>
