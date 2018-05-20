@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            text-shadow: 10px 10px 1px rgba(225,225,5,0.5);
+        }
+      #div2{
+          border: 1px solid;
+          width: 100px;
+          /*强制换行*/
+          /*word-break: break-all;*/
+          /*
+           出现.....的方式
+          */
+          /*不换行*/
+          white-space: nowrap;
+          /*溢出隐藏*/
+          overflow: hidden;
+          /*将溢出部分换成...*/
+          text-overflow: ellipsis;
+      }
+        #div3{
+            width:200px;
+            height: 200px;
+            background: red;
+            box-shadow: 10px 10px 1px 20px blue;
+        }
+        #div4{
+            width: 200px;
+            height: 200px;
+            background:  #ccc;
+            border: 10px solid grey;
+            border-image: url(./2.jpg) 10/10px;
+
+        }
+    </style>
+</head>
+<body>
+<div id="div1">div1</div>
+<div id="div2">shdgajhaklsdhasdasaassadaadsadadsadsadddasddasda</div>
+<div id="div3"></div>
+<div id="div4"></div>
+</body>
+</html>
