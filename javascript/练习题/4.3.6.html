@@ -7,18 +7,43 @@
 <body>
 <script>
     function print(num){
-        for(var i=1; i<=num; i++){
-            for(var k=1; k<=num-i; k++){
-                document.write("&nbsp;");
+            /*
+            * 上半部分
+            * */
+
+          for(var i=1; i<=num-1; i++) {
+              var str = "";
+              for (var k = 1; k <= num - i; k++) {
+                  str += " ";
+                  document.write("&nbsp;&nbsp;");
+              }
+              for (var j = 1; j <= i * 2 - 1; j++) {
+                  str += "*";
+                  document.write("*&nbsp;");
+              }
+              document.write("<br>");
+              console.log(str);
+          }
+            /*
+            * 下半部分
+            * */
+        for (i=num; i>=1; i--) {
+            var strs="";
+            for (var k=0; k<num-i; k++) {
+                document.write("&nbsp;&nbsp;");
+                strs += " ";
             }
-            for(var j=1; j<=i; j++){
+            for (j= i*2-1; j>=1; j--) {
+                strs += "*";
                 document.write("*&nbsp;");
             }
             document.write("<br>");
+            console.log(strs);
         }
-    }
-    print(5);
 
+
+    }
+    print(3);
 
 </script>
 </body>
